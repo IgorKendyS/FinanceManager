@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FinanceManager.Domain.Entities;
+using FluentValidation;
 
 namespace FinanceManager.Service.Validators
 {
-    internal class UserValidator
+    public class UserValidator : AbstractValidator<User>
     {
+        public UserValidator() { 
+            
+        }
     }
 }

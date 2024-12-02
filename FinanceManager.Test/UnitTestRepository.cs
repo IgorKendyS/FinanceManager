@@ -1,7 +1,6 @@
 ﻿
 using FinanceManager.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.Json;
 
 namespace FinanceManager.Test

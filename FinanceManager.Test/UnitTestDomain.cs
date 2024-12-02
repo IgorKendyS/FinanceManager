@@ -1,6 +1,6 @@
 ﻿
 using FinanceManager.Domain.Entities;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+
 
 namespace FinanceManager.Test
 {

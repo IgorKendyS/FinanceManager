@@ -23,7 +23,6 @@
   <ItemGroup>
     <ProjectReference Include="..\FinanceManager.Domain\FinanceManager.Domain.csproj" />
     <ProjectReference Include="..\FinanceManager.Repository\FinanceManager.Repository.csproj" />
-    <ProjectReference Include="..\FinanceManager.Service\FinanceManager.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>
