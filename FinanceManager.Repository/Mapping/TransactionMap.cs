@@ -8,7 +8,7 @@ namespace FinanceManager.Repository.Mapping
     {
         public void Configure(EntityTypeBuilder<Transaction> builder)
         {
-            builder.ToTable("expenses"); // Nome da tabela no banco
+            builder.ToTable("transactions"); // Nome da tabela no banco
 
             builder.HasKey(e => e.Id); // Chave primária
 

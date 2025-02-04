@@ -21,7 +21,6 @@ namespace FinanceManager.Domain.Entities
         public decimal? CardLimit { get; set; }
         public int UserId { get; set; }
 
-        // Propriedade de Navegação (opcional)
         public User? User { get; set; }
     }
 }

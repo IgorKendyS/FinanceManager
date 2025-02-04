@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.Test", "FinanceManager.Test\FinanceManager.Test.csproj", "{5C9C9066-971B-43A5-9A0F-BB1B4CB59ADE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.Test", "FinanceManager.Test\FinanceManager.Test.csproj", "{5C9C9066-971B-43A5-9A0F-BB1B4CB59ADE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.Domain", "FinanceManager.Domain\FinanceManager.Domain.csproj", "{2DD1AB34-A563-4052-9BD3-8B10A8B22A5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.Domain", "FinanceManager.Domain\FinanceManager.Domain.csproj", "{2DD1AB34-A563-4052-9BD3-8B10A8B22A5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.Repository", "FinanceManager.Repository\FinanceManager.Repository.csproj", "{F9D3FEBE-8870-49D5-84A7-A8DDE10173C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.Repository", "FinanceManager.Repository\FinanceManager.Repository.csproj", "{F9D3FEBE-8870-49D5-84A7-A8DDE10173C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.Service", "FinanceManager.Service\FinanceManager.Service.csproj", "{7BC556D6-44F3-426B-B59E-3B46C224DDF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManager.Service", "FinanceManager.Service\FinanceManager.Service.csproj", "{7BC556D6-44F3-426B-B59E-3B46C224DDF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceManager.App", "FinanceManager.App\FinanceManager.App.csproj", "{5E57F456-646E-439A-B25A-5A9C13AE8C51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7BC556D6-44F3-426B-B59E-3B46C224DDF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BC556D6-44F3-426B-B59E-3B46C224DDF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BC556D6-44F3-426B-B59E-3B46C224DDF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E57F456-646E-439A-B25A-5A9C13AE8C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E57F456-646E-439A-B25A-5A9C13AE8C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E57F456-646E-439A-B25A-5A9C13AE8C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E57F456-646E-439A-B25A-5A9C13AE8C51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
