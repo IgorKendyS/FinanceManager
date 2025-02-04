@@ -16,7 +16,7 @@
         public int UserId { get; set; }
         public string? User { get; set; }
 
-        public int CategoryId { get; set; }
+        public int CategoryId { get; set; } 
         public string? Category { get; set; }
 
         public int PaymentMethodId { get; set; }

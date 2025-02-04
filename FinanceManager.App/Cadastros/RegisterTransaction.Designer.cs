@@ -34,12 +34,14 @@
             txtIdUser = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtCategoryId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboPaymentMethod = new ReaLTaiizor.Controls.MaterialComboBox();
+            cboCategory = new ReaLTaiizor.Controls.MaterialComboBox();
             tabPageCadastro.SuspendLayout();
             materialTabControl.SuspendLayout();
             SuspendLayout();
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(cboCategory);
             tabPageCadastro.Controls.Add(cboPaymentMethod);
             tabPageCadastro.Controls.Add(txtCategoryId);
             tabPageCadastro.Controls.Add(txtIdUser);
@@ -55,6 +57,7 @@
             tabPageCadastro.Controls.SetChildIndex(txtIdUser, 0);
             tabPageCadastro.Controls.SetChildIndex(txtCategoryId, 0);
             tabPageCadastro.Controls.SetChildIndex(cboPaymentMethod, 0);
+            tabPageCadastro.Controls.SetChildIndex(cboCategory, 0);
             // 
             // materialTabControl
             // 
@@ -76,7 +79,7 @@
             txtAmount.BackgroundImageLayout = ImageLayout.None;
             txtAmount.CharacterCasing = CharacterCasing.Normal;
             txtAmount.Depth = 0;
-            txtAmount.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtAmount.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtAmount.HideSelection = true;
             txtAmount.Hint = "Valor";
             txtAmount.LeadingIcon = null;
@@ -137,7 +140,7 @@
             txtDescription.CharacterCasing = CharacterCasing.Normal;
             txtDescription.Depth = 0;
             txtDescription.HideSelection = true;
-            txtDescription.Location = new Point(6, 60);
+            txtDescription.Location = new Point(6, 61);
             txtDescription.MaxLength = 32767;
             txtDescription.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtDescription.Name = "txtDescription";
@@ -162,11 +165,11 @@
             txtIdUser.BackgroundImageLayout = ImageLayout.None;
             txtIdUser.CharacterCasing = CharacterCasing.Normal;
             txtIdUser.Depth = 0;
-            txtIdUser.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtIdUser.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtIdUser.HideSelection = true;
             txtIdUser.Hint = "Id Usuário";
             txtIdUser.LeadingIcon = null;
-            txtIdUser.Location = new Point(3, 147);
+            txtIdUser.Location = new Point(6, 148);
             txtIdUser.MaxLength = 32767;
             txtIdUser.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtIdUser.Name = "txtIdUser";
@@ -197,7 +200,7 @@
             txtCategoryId.HideSelection = true;
             txtCategoryId.Hint = "Id Catergoria";
             txtCategoryId.LeadingIcon = null;
-            txtCategoryId.Location = new Point(116, 147);
+            txtCategoryId.Location = new Point(119, 148);
             txtCategoryId.MaxLength = 32767;
             txtCategoryId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtCategoryId.Name = "txtCategoryId";
@@ -225,7 +228,7 @@
             cboPaymentMethod.DropDownHeight = 174;
             cboPaymentMethod.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPaymentMethod.DropDownWidth = 121;
-            cboPaymentMethod.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboPaymentMethod.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboPaymentMethod.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboPaymentMethod.FormattingEnabled = true;
             cboPaymentMethod.IntegralHeight = false;
@@ -238,6 +241,28 @@
             cboPaymentMethod.Size = new Size(195, 49);
             cboPaymentMethod.StartIndex = 0;
             cboPaymentMethod.TabIndex = 8;
+            // 
+            // cboCategory
+            // 
+            cboCategory.AutoResize = false;
+            cboCategory.BackColor = Color.FromArgb(255, 255, 255);
+            cboCategory.Depth = 0;
+            cboCategory.DrawMode = DrawMode.OwnerDrawVariable;
+            cboCategory.DropDownHeight = 174;
+            cboCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboCategory.DropDownWidth = 121;
+            cboCategory.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboCategory.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboCategory.FormattingEnabled = true;
+            cboCategory.IntegralHeight = false;
+            cboCategory.ItemHeight = 43;
+            cboCategory.Location = new Point(254, 147);
+            cboCategory.MaxDropDownItems = 4;
+            cboCategory.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboCategory.Name = "cboCategory";
+            cboCategory.Size = new Size(195, 49);
+            cboCategory.StartIndex = 0;
+            cboCategory.TabIndex = 9;
             // 
             // RegisterTransaction
             // 
@@ -261,5 +286,6 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtCategoryId;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtIdUser;
         private ReaLTaiizor.Controls.MaterialComboBox cboPaymentMethod;
+        private ReaLTaiizor.Controls.MaterialComboBox cboCategory;
     }
 }
