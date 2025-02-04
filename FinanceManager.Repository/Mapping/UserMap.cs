@@ -33,7 +33,9 @@ namespace FinanceManager.Repository.Mapping
 
             builder.Property(u => u.Created)
                 .HasColumnName("Created")
+                .HasColumnType("datetime(0)")
                 .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
 
             builder.Property(u => u.LastLogin)
                 .HasColumnName("LastLogin")

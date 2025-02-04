@@ -34,18 +34,20 @@
             categoriaToolStripMenuItem = new ToolStripMenuItem();
             métodoDePagamentoToolStripMenuItem = new ToolStripMenuItem();
             transaçõesToolStripMenuItem = new ToolStripMenuItem();
-            registrarTransaçãoToolStripMenuItem = new ToolStripMenuItem();
-            relatóriosToolStripMenuItem = new ToolStripMenuItem();
+            registrarTransacaoToolStripMenuItem = new ToolStripMenuItem();
+            relatoriosToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem, transaçõesToolStripMenuItem, relatóriosToolStripMenuItem, sairToolStripMenuItem });
-            menuStrip1.Location = new Point(3, 64);
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem, transaçõesToolStripMenuItem, relatoriosToolStripMenuItem, sairToolStripMenuItem });
+            menuStrip1.Location = new Point(3, 85);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(794, 24);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(908, 30);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -53,62 +55,64 @@
             // 
             cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuarioToolStripMenuItem, categoriaToolStripMenuItem, métodoDePagamentoToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            cadastrosToolStripMenuItem.Size = new Size(71, 20);
+            cadastrosToolStripMenuItem.Size = new Size(88, 24);
             cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
             // usuarioToolStripMenuItem
             // 
             usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            usuarioToolStripMenuItem.Size = new Size(196, 22);
+            usuarioToolStripMenuItem.Size = new Size(245, 26);
             usuarioToolStripMenuItem.Text = "Usuário";
-            usuarioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
+            usuarioToolStripMenuItem.Click += usuarioToolStripMenuItem_Click;
             // 
             // categoriaToolStripMenuItem
             // 
             categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            categoriaToolStripMenuItem.Size = new Size(196, 22);
+            categoriaToolStripMenuItem.Size = new Size(245, 26);
             categoriaToolStripMenuItem.Text = "Categoria";
             // 
             // métodoDePagamentoToolStripMenuItem
             // 
             métodoDePagamentoToolStripMenuItem.Name = "métodoDePagamentoToolStripMenuItem";
-            métodoDePagamentoToolStripMenuItem.Size = new Size(196, 22);
+            métodoDePagamentoToolStripMenuItem.Size = new Size(245, 26);
             métodoDePagamentoToolStripMenuItem.Text = "Método de Pagamento";
             // 
             // transaçõesToolStripMenuItem
             // 
-            transaçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { registrarTransaçãoToolStripMenuItem });
+            transaçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { registrarTransacaoToolStripMenuItem });
             transaçõesToolStripMenuItem.Name = "transaçõesToolStripMenuItem";
-            transaçõesToolStripMenuItem.Size = new Size(76, 20);
+            transaçõesToolStripMenuItem.Size = new Size(95, 24);
             transaçõesToolStripMenuItem.Text = "Transações";
             // 
-            // registrarTransaçãoToolStripMenuItem
+            // registrarTransacaoToolStripMenuItem
             // 
-            registrarTransaçãoToolStripMenuItem.Name = "registrarTransaçãoToolStripMenuItem";
-            registrarTransaçãoToolStripMenuItem.Size = new Size(175, 22);
-            registrarTransaçãoToolStripMenuItem.Text = "Registrar Transação";
+            registrarTransacaoToolStripMenuItem.Name = "registrarTransacaoToolStripMenuItem";
+            registrarTransacaoToolStripMenuItem.Size = new Size(224, 26);
+            registrarTransacaoToolStripMenuItem.Text = "Registrar Transação";
             // 
-            // relatóriosToolStripMenuItem
+            // relatoriosToolStripMenuItem
             // 
-            relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            relatóriosToolStripMenuItem.Size = new Size(71, 20);
-            relatóriosToolStripMenuItem.Text = "Relatórios";
+            relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
+            relatoriosToolStripMenuItem.Size = new Size(90, 24);
+            relatoriosToolStripMenuItem.Text = "Relatórios";
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(38, 20);
+            sairToolStripMenuItem.Size = new Size(48, 24);
             sairToolStripMenuItem.Text = "Sair";
             // 
             // FormPrincipal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormPrincipal";
+            Padding = new Padding(3, 85, 3, 4);
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -124,8 +128,8 @@
         private ToolStripMenuItem categoriaToolStripMenuItem;
         private ToolStripMenuItem métodoDePagamentoToolStripMenuItem;
         private ToolStripMenuItem transaçõesToolStripMenuItem;
-        private ToolStripMenuItem registrarTransaçãoToolStripMenuItem;
-        private ToolStripMenuItem relatóriosToolStripMenuItem;
+        private ToolStripMenuItem registrarTransacaoToolStripMenuItem;
+        private ToolStripMenuItem relatoriosToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
         private ToolStripMenuItem usuarioToolStripMenuItem;
     }
