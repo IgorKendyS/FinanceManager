@@ -3,6 +3,7 @@ using FinanceManager.App.Infra;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
 
+// wpp 18981007529
 namespace FinanceManager.App
 {
     public partial class FormPrincipal : MaterialForm
@@ -15,6 +16,21 @@ namespace FinanceManager.App
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Exibeformulario<CadastroUsuario>();
+        }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<RegisterCategory>();
+        }
+
+        private void metodoDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<RegisterPaymentMethod>();
+        }
+
+        private void registrarTransacaoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<RegisterTransaction>();
         }
 
         private void Exibeformulario<TFormlario>() where TFormlario : Form

@@ -9,6 +9,7 @@ namespace FinanceManager.App.Cadastros
     public partial class CadastroUsuario : CadastroBase
     {
         private readonly IBaseService<User> _userService;
+
         private List<UserModel>? users;
 
         public CadastroUsuario(IBaseService<User> userService)
@@ -61,6 +62,7 @@ namespace FinanceManager.App.Cadastros
             {
                 _userService.Delete(id);
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Finance Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -90,6 +92,11 @@ namespace FinanceManager.App.Cadastros
             txtDataUltimoLogin.Text = DateTime.TryParse(linha?.Cells["LastLogin"].Value.ToString(), out var dataL)
                 ? dataL.ToString("g")
                 : "";
+        }
+
+        private void CadastroUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

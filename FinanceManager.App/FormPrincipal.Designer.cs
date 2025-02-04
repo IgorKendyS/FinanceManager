@@ -32,7 +32,7 @@
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             usuarioToolStripMenuItem = new ToolStripMenuItem();
             categoriaToolStripMenuItem = new ToolStripMenuItem();
-            métodoDePagamentoToolStripMenuItem = new ToolStripMenuItem();
+            metodoDePagamentoToolStripMenuItem = new ToolStripMenuItem();
             transaçõesToolStripMenuItem = new ToolStripMenuItem();
             registrarTransacaoToolStripMenuItem = new ToolStripMenuItem();
             relatoriosToolStripMenuItem = new ToolStripMenuItem();
@@ -53,7 +53,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuarioToolStripMenuItem, categoriaToolStripMenuItem, métodoDePagamentoToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuarioToolStripMenuItem, categoriaToolStripMenuItem, metodoDePagamentoToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(88, 24);
             cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -70,12 +70,14 @@
             categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
             categoriaToolStripMenuItem.Size = new Size(245, 26);
             categoriaToolStripMenuItem.Text = "Categoria";
+            categoriaToolStripMenuItem.Click += categoriaToolStripMenuItem_Click;
             // 
-            // métodoDePagamentoToolStripMenuItem
+            // metodoDePagamentoToolStripMenuItem
             // 
-            métodoDePagamentoToolStripMenuItem.Name = "métodoDePagamentoToolStripMenuItem";
-            métodoDePagamentoToolStripMenuItem.Size = new Size(245, 26);
-            métodoDePagamentoToolStripMenuItem.Text = "Método de Pagamento";
+            metodoDePagamentoToolStripMenuItem.Name = "metodoDePagamentoToolStripMenuItem";
+            metodoDePagamentoToolStripMenuItem.Size = new Size(245, 26);
+            metodoDePagamentoToolStripMenuItem.Text = "Método de Pagamento";
+            metodoDePagamentoToolStripMenuItem.Click += metodoDePagamentoToolStripMenuItem_Click;
             // 
             // transaçõesToolStripMenuItem
             // 
@@ -89,6 +91,7 @@
             registrarTransacaoToolStripMenuItem.Name = "registrarTransacaoToolStripMenuItem";
             registrarTransacaoToolStripMenuItem.Size = new Size(224, 26);
             registrarTransacaoToolStripMenuItem.Text = "Registrar Transação";
+            registrarTransacaoToolStripMenuItem.Click += registrarTransacaoToolStripMenuItem_Click;
             // 
             // relatoriosToolStripMenuItem
             // 
@@ -106,6 +109,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(914, 600);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
@@ -113,7 +117,9 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormPrincipal";
             Padding = new Padding(3, 85, 3, 4);
-            Text = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Gerenciador de Finanças";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -126,7 +132,7 @@
         private ToolStripMenuItem cadastrosToolStripMenuItem;
         private ToolStripMenuItem usuárioToolStripMenuItem;
         private ToolStripMenuItem categoriaToolStripMenuItem;
-        private ToolStripMenuItem métodoDePagamentoToolStripMenuItem;
+        private ToolStripMenuItem metodoDePagamentoToolStripMenuItem;
         private ToolStripMenuItem transaçõesToolStripMenuItem;
         private ToolStripMenuItem registrarTransacaoToolStripMenuItem;
         private ToolStripMenuItem relatoriosToolStripMenuItem;

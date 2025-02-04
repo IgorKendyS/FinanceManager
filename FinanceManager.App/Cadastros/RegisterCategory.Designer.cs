@@ -42,7 +42,9 @@
             tabPageCadastro.Controls.Add(txtMLDescription);
             tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtName);
-            tabPageCadastro.Size = new Size(521, 348);
+            tabPageCadastro.Margin = new Padding(3, 5, 3, 5);
+            tabPageCadastro.Padding = new Padding(3, 5, 3, 5);
+            tabPageCadastro.Size = new Size(611, 336);
             tabPageCadastro.Controls.SetChildIndex(btnCancelar, 0);
             tabPageCadastro.Controls.SetChildIndex(btnSalvar, 0);
             tabPageCadastro.Controls.SetChildIndex(txtName, 0);
@@ -52,7 +54,34 @@
             // 
             // materialTabControl
             // 
-            materialTabControl.Size = new Size(529, 383);
+            materialTabControl.Location = new Point(3, 113);
+            materialTabControl.Margin = new Padding(3, 5, 3, 5);
+            materialTabControl.Size = new Size(619, 371);
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(379, 283);
+            btnCancelar.Margin = new Padding(6, 11, 6, 11);
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(521, 283);
+            btnSalvar.Margin = new Padding(6, 11, 6, 11);
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(457, 532);
+            btnEditar.Margin = new Padding(6, 11, 6, 11);
+            // 
+            // btnNovo
+            // 
+            btnNovo.Location = new Point(363, 532);
+            btnNovo.Margin = new Padding(6, 11, 6, 11);
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(560, 532);
+            btnExcluir.Margin = new Padding(6, 11, 6, 11);
             // 
             // txtName
             // 
@@ -66,7 +95,8 @@
             txtName.HideSelection = true;
             txtName.Hint = "Nome da Categoria";
             txtName.LeadingIcon = null;
-            txtName.Location = new Point(6, 6);
+            txtName.Location = new Point(7, 8);
+            txtName.Margin = new Padding(3, 4, 3, 4);
             txtName.MaxLength = 32767;
             txtName.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtName.Name = "txtName";
@@ -78,7 +108,7 @@
             txtName.SelectionLength = 0;
             txtName.SelectionStart = 0;
             txtName.ShortcutsEnabled = true;
-            txtName.Size = new Size(275, 48);
+            txtName.Size = new Size(314, 48);
             txtName.TabIndex = 2;
             txtName.TabStop = false;
             txtName.TextAlign = HorizontalAlignment.Left;
@@ -97,7 +127,8 @@
             txtId.HideSelection = true;
             txtId.Hint = "ID";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(456, 6);
+            txtId.Location = new Point(521, 8);
+            txtId.Margin = new Padding(3, 4, 3, 4);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -109,7 +140,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(59, 48);
+            txtId.Size = new Size(67, 48);
             txtId.TabIndex = 3;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -124,7 +155,8 @@
             txtMLDescription.Depth = 0;
             txtMLDescription.HideSelection = true;
             txtMLDescription.Hint = "Descrição (OPCIONAL)";
-            txtMLDescription.Location = new Point(6, 60);
+            txtMLDescription.Location = new Point(7, 80);
+            txtMLDescription.Margin = new Padding(3, 4, 3, 4);
             txtMLDescription.MaxLength = 32767;
             txtMLDescription.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtMLDescription.Name = "txtMLDescription";
@@ -135,7 +167,7 @@
             txtMLDescription.SelectionLength = 0;
             txtMLDescription.SelectionStart = 0;
             txtMLDescription.ShortcutsEnabled = true;
-            txtMLDescription.Size = new Size(509, 141);
+            txtMLDescription.Size = new Size(582, 188);
             txtMLDescription.TabIndex = 4;
             txtMLDescription.TabStop = false;
             txtMLDescription.TextAlign = HorizontalAlignment.Left;
@@ -150,27 +182,30 @@
             cboType.DropDownHeight = 174;
             cboType.DropDownStyle = ComboBoxStyle.DropDownList;
             cboType.DropDownWidth = 121;
-            cboType.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboType.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboType.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboType.FormattingEnabled = true;
             cboType.IntegralHeight = false;
             cboType.ItemHeight = 43;
             cboType.Items.AddRange(new object[] { "Entrada", "Saída" });
-            cboType.Location = new Point(287, 6);
+            cboType.Location = new Point(328, 8);
+            cboType.Margin = new Padding(3, 4, 3, 4);
             cboType.MaxDropDownItems = 4;
             cboType.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboType.Name = "cboType";
-            cboType.Size = new Size(163, 49);
+            cboType.Size = new Size(186, 49);
             cboType.StartIndex = 0;
             cboType.TabIndex = 5;
             // 
             // RegisterCategory
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(535, 450);
+            ClientSize = new Size(625, 489);
             Location = new Point(0, 0);
+            Margin = new Padding(3, 5, 3, 5);
             Name = "RegisterCategory";
+            Padding = new Padding(3, 113, 3, 5);
             Text = "Cadastro Categoria";
             tabPageCadastro.ResumeLayout(false);
             tabPageCadastro.PerformLayout();
