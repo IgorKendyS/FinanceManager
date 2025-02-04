@@ -8,7 +8,7 @@ namespace FinanceManager.Domain.Entities
         {
         }
 
-        public Category(int id, string name, string type, string? description = null) : base(id)
+        public Category(int id, string name, string type, string? description = "") : base(id)
         {
             Name = name;
             Type = type;
