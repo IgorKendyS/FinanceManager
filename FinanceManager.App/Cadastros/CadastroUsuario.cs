@@ -93,10 +93,5 @@ namespace FinanceManager.App.Cadastros
                 ? dataL.ToString("g")
                 : "";
         }
-
-        private void CadastroUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

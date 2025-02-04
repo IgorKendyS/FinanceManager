@@ -311,7 +311,6 @@
             Name = "CadastroUsuario";
             Padding = new Padding(3, 113, 3, 5);
             Text = "Cadastro de Usuários";
-            Load += CadastroUsuario_Load;
             tabPageCadastro.ResumeLayout(false);
             tabPageCadastro.PerformLayout();
             materialTabControl.ResumeLayout(false);
