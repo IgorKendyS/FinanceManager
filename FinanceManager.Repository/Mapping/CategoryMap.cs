@@ -8,9 +8,9 @@ namespace FinanceManager.Repository.Mapping
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.ToTable("categories"); // Nome da tabela no banco
+            builder.ToTable("categories"); 
 
-            builder.HasKey(c => c.Id); // Chave primária
+            builder.HasKey(c => c.Id); 
 
             builder.Property(c => c.Name)
                 .IsRequired()

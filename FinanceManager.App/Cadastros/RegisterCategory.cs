@@ -3,7 +3,6 @@ using FinanceManager.App.Models;
 using FinanceManager.Domain.Base;
 using FinanceManager.Domain.Entities;
 using FinanceManager.Service.Validators;
-using Microsoft.VisualBasic.ApplicationServices;
 
 namespace FinanceManager.App.Cadastros
 {
@@ -11,7 +10,8 @@ namespace FinanceManager.App.Cadastros
     {
         private readonly IBaseService<Category> _categoryService;
 
-        private List<Category>? categories;
+        private List<CategoryModel>? categories;
+
         public RegisterCategory(IBaseService<Category> categoryService)
         {
             _categoryService = categoryService;
@@ -69,7 +69,6 @@ namespace FinanceManager.App.Cadastros
         {
             categories = _categoryService.Get<CategoryModel>().ToList();
             dataGridViewConsulta.DataSource = categories;
-            dataGridViewConsulta.Columns["PasswordHash"]!.Visible = false;
             dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 

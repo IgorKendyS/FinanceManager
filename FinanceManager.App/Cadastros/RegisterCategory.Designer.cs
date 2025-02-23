@@ -42,9 +42,10 @@
             tabPageCadastro.Controls.Add(txtMLDescription);
             tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtName);
-            tabPageCadastro.Margin = new Padding(3, 5, 3, 5);
-            tabPageCadastro.Padding = new Padding(3, 5, 3, 5);
-            tabPageCadastro.Size = new Size(611, 336);
+            tabPageCadastro.Location = new Point(4, 31);
+            tabPageCadastro.Margin = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Padding = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Size = new Size(542, 268);
             tabPageCadastro.Controls.SetChildIndex(btnCancelar, 0);
             tabPageCadastro.Controls.SetChildIndex(btnSalvar, 0);
             tabPageCadastro.Controls.SetChildIndex(txtName, 0);
@@ -54,34 +55,34 @@
             // 
             // materialTabControl
             // 
-            materialTabControl.Location = new Point(3, 113);
-            materialTabControl.Margin = new Padding(3, 5, 3, 5);
-            materialTabControl.Size = new Size(619, 371);
+            materialTabControl.Location = new Point(3, 85);
+            materialTabControl.Margin = new Padding(3, 4, 3, 4);
+            materialTabControl.Size = new Size(550, 303);
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(379, 283);
-            btnCancelar.Margin = new Padding(6, 11, 6, 11);
+            btnCancelar.Location = new Point(332, 212);
+            btnCancelar.Margin = new Padding(5, 8, 5, 8);
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(521, 283);
-            btnSalvar.Margin = new Padding(6, 11, 6, 11);
+            btnSalvar.Location = new Point(456, 212);
+            btnSalvar.Margin = new Padding(5, 8, 5, 8);
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(457, 532);
-            btnEditar.Margin = new Padding(6, 11, 6, 11);
+            btnEditar.Location = new Point(400, 399);
+            btnEditar.Margin = new Padding(5, 8, 5, 8);
             // 
             // btnNovo
             // 
-            btnNovo.Location = new Point(363, 532);
-            btnNovo.Margin = new Padding(6, 11, 6, 11);
+            btnNovo.Location = new Point(318, 399);
+            btnNovo.Margin = new Padding(5, 8, 5, 8);
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(560, 532);
-            btnExcluir.Margin = new Padding(6, 11, 6, 11);
+            btnExcluir.Location = new Point(490, 399);
+            btnExcluir.Margin = new Padding(5, 8, 5, 8);
             // 
             // txtName
             // 
@@ -95,8 +96,7 @@
             txtName.HideSelection = true;
             txtName.Hint = "Nome da Categoria";
             txtName.LeadingIcon = null;
-            txtName.Location = new Point(7, 8);
-            txtName.Margin = new Padding(3, 4, 3, 4);
+            txtName.Location = new Point(6, 6);
             txtName.MaxLength = 32767;
             txtName.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtName.Name = "txtName";
@@ -108,7 +108,7 @@
             txtName.SelectionLength = 0;
             txtName.SelectionStart = 0;
             txtName.ShortcutsEnabled = true;
-            txtName.Size = new Size(314, 48);
+            txtName.Size = new Size(275, 48);
             txtName.TabIndex = 2;
             txtName.TabStop = false;
             txtName.TextAlign = HorizontalAlignment.Left;
@@ -127,8 +127,7 @@
             txtId.HideSelection = true;
             txtId.Hint = "ID";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(521, 8);
-            txtId.Margin = new Padding(3, 4, 3, 4);
+            txtId.Location = new Point(456, 6);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -140,7 +139,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(67, 48);
+            txtId.Size = new Size(59, 48);
             txtId.TabIndex = 3;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -155,8 +154,7 @@
             txtMLDescription.Depth = 0;
             txtMLDescription.HideSelection = true;
             txtMLDescription.Hint = "Descrição (OPCIONAL)";
-            txtMLDescription.Location = new Point(7, 80);
-            txtMLDescription.Margin = new Padding(3, 4, 3, 4);
+            txtMLDescription.Location = new Point(6, 60);
             txtMLDescription.MaxLength = 32767;
             txtMLDescription.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtMLDescription.Name = "txtMLDescription";
@@ -167,7 +165,7 @@
             txtMLDescription.SelectionLength = 0;
             txtMLDescription.SelectionStart = 0;
             txtMLDescription.ShortcutsEnabled = true;
-            txtMLDescription.Size = new Size(582, 188);
+            txtMLDescription.Size = new Size(509, 141);
             txtMLDescription.TabIndex = 4;
             txtMLDescription.TabStop = false;
             txtMLDescription.TextAlign = HorizontalAlignment.Left;
@@ -188,24 +186,23 @@
             cboType.IntegralHeight = false;
             cboType.ItemHeight = 43;
             cboType.Items.AddRange(new object[] { "Entrada", "Saída" });
-            cboType.Location = new Point(328, 8);
-            cboType.Margin = new Padding(3, 4, 3, 4);
+            cboType.Location = new Point(287, 6);
             cboType.MaxDropDownItems = 4;
             cboType.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboType.Name = "cboType";
-            cboType.Size = new Size(186, 49);
+            cboType.Size = new Size(163, 49);
             cboType.StartIndex = 0;
             cboType.TabIndex = 5;
             // 
             // RegisterCategory
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(625, 489);
+            ClientSize = new Size(556, 392);
             Location = new Point(0, 0);
-            Margin = new Padding(3, 5, 3, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "RegisterCategory";
-            Padding = new Padding(3, 113, 3, 5);
+            Padding = new Padding(3, 85, 3, 4);
             Text = "Cadastro Categoria";
             tabPageCadastro.ResumeLayout(false);
             tabPageCadastro.PerformLayout();

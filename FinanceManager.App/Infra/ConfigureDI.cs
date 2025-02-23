@@ -10,8 +10,6 @@ using FinanceManager.Service.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.VisualBasic.Logging;
-using System;
 
 namespace FinanceManager.App.Infra
 {

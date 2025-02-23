@@ -28,40 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtAmount = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtDate = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtDescription = new ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit();
             txtIdUser = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtCategoryId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboPaymentMethod = new ReaLTaiizor.Controls.MaterialComboBox();
             cboCategory = new ReaLTaiizor.Controls.MaterialComboBox();
+            txtTransactionDate = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
+            txtValue = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
+            txtCategoryId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             tabPageCadastro.SuspendLayout();
             materialTabControl.SuspendLayout();
             SuspendLayout();
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(txtValue);
+            tabPageCadastro.Controls.Add(txtTransactionDate);
             tabPageCadastro.Controls.Add(cboCategory);
             tabPageCadastro.Controls.Add(cboPaymentMethod);
             tabPageCadastro.Controls.Add(txtCategoryId);
             tabPageCadastro.Controls.Add(txtIdUser);
             tabPageCadastro.Controls.Add(txtDescription);
-            tabPageCadastro.Controls.Add(txtDate);
-            tabPageCadastro.Controls.Add(txtAmount);
-            tabPageCadastro.Size = new Size(517, 285);
-            tabPageCadastro.Controls.SetChildIndex(btnCancelar, 0);
-            tabPageCadastro.Controls.SetChildIndex(btnSalvar, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtAmount, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtDate, 0);
+            tabPageCadastro.Location = new Point(4, 31);
+            tabPageCadastro.Size = new Size(525, 274);
             tabPageCadastro.Controls.SetChildIndex(txtDescription, 0);
             tabPageCadastro.Controls.SetChildIndex(txtIdUser, 0);
             tabPageCadastro.Controls.SetChildIndex(txtCategoryId, 0);
             tabPageCadastro.Controls.SetChildIndex(cboPaymentMethod, 0);
             tabPageCadastro.Controls.SetChildIndex(cboCategory, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtTransactionDate, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtValue, 0);
+            tabPageCadastro.Controls.SetChildIndex(btnCancelar, 0);
+            tabPageCadastro.Controls.SetChildIndex(btnSalvar, 0);
             // 
             // materialTabControl
             // 
-            materialTabControl.Size = new Size(525, 320);
+            materialTabControl.Size = new Size(533, 309);
             // 
             // btnCancelar
             // 
@@ -71,68 +72,6 @@
             // 
             btnSalvar.Location = new Point(434, 222);
             // 
-            // txtAmount
-            // 
-            txtAmount.AnimateReadOnly = false;
-            txtAmount.AutoCompleteMode = AutoCompleteMode.None;
-            txtAmount.AutoCompleteSource = AutoCompleteSource.None;
-            txtAmount.BackgroundImageLayout = ImageLayout.None;
-            txtAmount.CharacterCasing = CharacterCasing.Normal;
-            txtAmount.Depth = 0;
-            txtAmount.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtAmount.HideSelection = true;
-            txtAmount.Hint = "Valor";
-            txtAmount.LeadingIcon = null;
-            txtAmount.Location = new Point(6, 6);
-            txtAmount.MaxLength = 32767;
-            txtAmount.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtAmount.Name = "txtAmount";
-            txtAmount.PasswordChar = '\0';
-            txtAmount.PrefixSuffixText = null;
-            txtAmount.ReadOnly = false;
-            txtAmount.RightToLeft = RightToLeft.No;
-            txtAmount.SelectedText = "";
-            txtAmount.SelectionLength = 0;
-            txtAmount.SelectionStart = 0;
-            txtAmount.ShortcutsEnabled = true;
-            txtAmount.Size = new Size(133, 48);
-            txtAmount.TabIndex = 2;
-            txtAmount.TabStop = false;
-            txtAmount.TextAlign = HorizontalAlignment.Left;
-            txtAmount.TrailingIcon = null;
-            txtAmount.UseSystemPasswordChar = false;
-            // 
-            // txtDate
-            // 
-            txtDate.AnimateReadOnly = false;
-            txtDate.AutoCompleteMode = AutoCompleteMode.None;
-            txtDate.AutoCompleteSource = AutoCompleteSource.None;
-            txtDate.BackgroundImageLayout = ImageLayout.None;
-            txtDate.CharacterCasing = CharacterCasing.Normal;
-            txtDate.Depth = 0;
-            txtDate.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtDate.HideSelection = true;
-            txtDate.Hint = "Data da transação";
-            txtDate.LeadingIcon = null;
-            txtDate.Location = new Point(346, 6);
-            txtDate.MaxLength = 32767;
-            txtDate.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtDate.Name = "txtDate";
-            txtDate.PasswordChar = '\0';
-            txtDate.PrefixSuffixText = null;
-            txtDate.ReadOnly = false;
-            txtDate.RightToLeft = RightToLeft.No;
-            txtDate.SelectedText = "";
-            txtDate.SelectionLength = 0;
-            txtDate.SelectionStart = 0;
-            txtDate.ShortcutsEnabled = true;
-            txtDate.Size = new Size(166, 48);
-            txtDate.TabIndex = 3;
-            txtDate.TabStop = false;
-            txtDate.TextAlign = HorizontalAlignment.Left;
-            txtDate.TrailingIcon = null;
-            txtDate.UseSystemPasswordChar = false;
-            // 
             // txtDescription
             // 
             txtDescription.AnimateReadOnly = false;
@@ -140,6 +79,7 @@
             txtDescription.CharacterCasing = CharacterCasing.Normal;
             txtDescription.Depth = 0;
             txtDescription.HideSelection = true;
+            txtDescription.Hint = "Desrição (opcional)";
             txtDescription.Location = new Point(6, 61);
             txtDescription.MaxLength = 32767;
             txtDescription.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -188,37 +128,6 @@
             txtIdUser.TrailingIcon = null;
             txtIdUser.UseSystemPasswordChar = false;
             // 
-            // txtCategoryId
-            // 
-            txtCategoryId.AnimateReadOnly = false;
-            txtCategoryId.AutoCompleteMode = AutoCompleteMode.None;
-            txtCategoryId.AutoCompleteSource = AutoCompleteSource.None;
-            txtCategoryId.BackgroundImageLayout = ImageLayout.None;
-            txtCategoryId.CharacterCasing = CharacterCasing.Normal;
-            txtCategoryId.Depth = 0;
-            txtCategoryId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtCategoryId.HideSelection = true;
-            txtCategoryId.Hint = "Id Catergoria";
-            txtCategoryId.LeadingIcon = null;
-            txtCategoryId.Location = new Point(119, 148);
-            txtCategoryId.MaxLength = 32767;
-            txtCategoryId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtCategoryId.Name = "txtCategoryId";
-            txtCategoryId.PasswordChar = '\0';
-            txtCategoryId.PrefixSuffixText = null;
-            txtCategoryId.ReadOnly = false;
-            txtCategoryId.RightToLeft = RightToLeft.No;
-            txtCategoryId.SelectedText = "";
-            txtCategoryId.SelectionLength = 0;
-            txtCategoryId.SelectionStart = 0;
-            txtCategoryId.ShortcutsEnabled = true;
-            txtCategoryId.Size = new Size(129, 48);
-            txtCategoryId.TabIndex = 6;
-            txtCategoryId.TabStop = false;
-            txtCategoryId.TextAlign = HorizontalAlignment.Left;
-            txtCategoryId.TrailingIcon = null;
-            txtCategoryId.UseSystemPasswordChar = false;
-            // 
             // cboPaymentMethod
             // 
             cboPaymentMethod.AutoResize = false;
@@ -233,7 +142,6 @@
             cboPaymentMethod.FormattingEnabled = true;
             cboPaymentMethod.IntegralHeight = false;
             cboPaymentMethod.ItemHeight = 43;
-            cboPaymentMethod.Items.AddRange(new object[] { "Crédito", "Débito", "Dinheiro" });
             cboPaymentMethod.Location = new Point(145, 6);
             cboPaymentMethod.MaxDropDownItems = 4;
             cboPaymentMethod.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -260,15 +168,131 @@
             cboCategory.MaxDropDownItems = 4;
             cboCategory.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboCategory.Name = "cboCategory";
-            cboCategory.Size = new Size(195, 49);
+            cboCategory.Size = new Size(256, 49);
             cboCategory.StartIndex = 0;
             cboCategory.TabIndex = 9;
+            // 
+            // txtTransactionDate
+            // 
+            txtTransactionDate.AllowPromptAsInput = true;
+            txtTransactionDate.AnimateReadOnly = false;
+            txtTransactionDate.AsciiOnly = false;
+            txtTransactionDate.BackgroundImageLayout = ImageLayout.None;
+            txtTransactionDate.BeepOnError = false;
+            txtTransactionDate.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
+            txtTransactionDate.Depth = 0;
+            txtTransactionDate.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtTransactionDate.HidePromptOnLeave = false;
+            txtTransactionDate.HideSelection = true;
+            txtTransactionDate.Hint = "Data de Transação";
+            txtTransactionDate.InsertKeyMode = InsertKeyMode.Default;
+            txtTransactionDate.LeadingIcon = null;
+            txtTransactionDate.Location = new Point(346, 7);
+            txtTransactionDate.Mask = "00/00/0000";
+            txtTransactionDate.MaxLength = 32767;
+            txtTransactionDate.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtTransactionDate.Name = "txtTransactionDate";
+            txtTransactionDate.PasswordChar = '\0';
+            txtTransactionDate.PrefixSuffixText = null;
+            txtTransactionDate.PromptChar = '_';
+            txtTransactionDate.ReadOnly = false;
+            txtTransactionDate.RejectInputOnFirstFailure = false;
+            txtTransactionDate.ResetOnPrompt = true;
+            txtTransactionDate.ResetOnSpace = true;
+            txtTransactionDate.RightToLeft = RightToLeft.No;
+            txtTransactionDate.SelectedText = "";
+            txtTransactionDate.SelectionLength = 0;
+            txtTransactionDate.SelectionStart = 0;
+            txtTransactionDate.ShortcutsEnabled = true;
+            txtTransactionDate.Size = new Size(164, 48);
+            txtTransactionDate.SkipLiterals = true;
+            txtTransactionDate.TabIndex = 10;
+            txtTransactionDate.TabStop = false;
+            txtTransactionDate.Text = "  /  /";
+            txtTransactionDate.TextAlign = HorizontalAlignment.Left;
+            txtTransactionDate.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtTransactionDate.TrailingIcon = null;
+            txtTransactionDate.UseSystemPasswordChar = false;
+            txtTransactionDate.ValidatingType = null;
+            // 
+            // txtValue
+            // 
+            txtValue.AllowPromptAsInput = true;
+            txtValue.AnimateReadOnly = false;
+            txtValue.AsciiOnly = false;
+            txtValue.BackgroundImageLayout = ImageLayout.None;
+            txtValue.BeepOnError = false;
+            txtValue.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
+            txtValue.Depth = 0;
+            txtValue.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtValue.HidePromptOnLeave = false;
+            txtValue.HideSelection = true;
+            txtValue.Hint = "Valor";
+            txtValue.InsertKeyMode = InsertKeyMode.Default;
+            txtValue.LeadingIcon = null;
+            txtValue.Location = new Point(6, 6);
+            txtValue.Mask = "";
+            txtValue.MaxLength = 32767;
+            txtValue.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtValue.Name = "txtValue";
+            txtValue.PasswordChar = '\0';
+            txtValue.PrefixSuffixText = null;
+            txtValue.PromptChar = '_';
+            txtValue.ReadOnly = false;
+            txtValue.RejectInputOnFirstFailure = false;
+            txtValue.ResetOnPrompt = true;
+            txtValue.ResetOnSpace = true;
+            txtValue.RightToLeft = RightToLeft.No;
+            txtValue.SelectedText = "";
+            txtValue.SelectionLength = 0;
+            txtValue.SelectionStart = 0;
+            txtValue.ShortcutsEnabled = true;
+            txtValue.Size = new Size(133, 48);
+            txtValue.SkipLiterals = true;
+            txtValue.TabIndex = 11;
+            txtValue.TabStop = false;
+            txtValue.TextAlign = HorizontalAlignment.Left;
+            txtValue.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtValue.TrailingIcon = null;
+            txtValue.UseSystemPasswordChar = false;
+            txtValue.ValidatingType = null;
+            // 
+            // txtCategoryId
+            // 
+            txtCategoryId.AnimateReadOnly = false;
+            txtCategoryId.AutoCompleteMode = AutoCompleteMode.None;
+            txtCategoryId.AutoCompleteSource = AutoCompleteSource.None;
+            txtCategoryId.BackgroundImageLayout = ImageLayout.None;
+            txtCategoryId.CharacterCasing = CharacterCasing.Normal;
+            txtCategoryId.Depth = 0;
+            txtCategoryId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtCategoryId.HideSelection = true;
+            txtCategoryId.Hint = "Id Catergoria";
+            txtCategoryId.LeadingIcon = null;
+            txtCategoryId.Location = new Point(119, 148);
+            txtCategoryId.MaxLength = 32767;
+            txtCategoryId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtCategoryId.Name = "txtCategoryId";
+            txtCategoryId.PasswordChar = '\0';
+            txtCategoryId.PrefixSuffixText = null;
+            txtCategoryId.ReadOnly = true;
+            txtCategoryId.RightToLeft = RightToLeft.No;
+            txtCategoryId.SelectedText = "";
+            txtCategoryId.SelectionLength = 0;
+            txtCategoryId.SelectionStart = 0;
+            txtCategoryId.ShortcutsEnabled = true;
+            txtCategoryId.Size = new Size(129, 48);
+            txtCategoryId.TabIndex = 6;
+            txtCategoryId.TabStop = false;
+            txtCategoryId.TextAlign = HorizontalAlignment.Left;
+            txtCategoryId.TrailingIcon = null;
+            txtCategoryId.UseSystemPasswordChar = false;
             // 
             // RegisterTransaction
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(531, 387);
+            ClientSize = new Size(539, 376);
             Location = new Point(0, 0);
             Name = "RegisterTransaction";
             Text = "Registro de Transação";
@@ -279,13 +303,12 @@
         }
 
         #endregion
-
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDate;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtAmount;
         private ReaLTaiizor.Controls.MaterialMultiLineTextBoxEdit txtDescription;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtCategoryId;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtIdUser;
         private ReaLTaiizor.Controls.MaterialComboBox cboPaymentMethod;
         private ReaLTaiizor.Controls.MaterialComboBox cboCategory;
+        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtValue;
+        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtTransactionDate;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtCategoryId;
     }
 }
