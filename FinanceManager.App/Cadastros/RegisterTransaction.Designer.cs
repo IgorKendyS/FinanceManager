@@ -35,12 +35,14 @@
             txtTransactionDate = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtValue = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtCategoryId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             tabPageCadastro.SuspendLayout();
             materialTabControl.SuspendLayout();
             SuspendLayout();
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtValue);
             tabPageCadastro.Controls.Add(txtTransactionDate);
             tabPageCadastro.Controls.Add(cboCategory);
@@ -59,6 +61,7 @@
             tabPageCadastro.Controls.SetChildIndex(txtValue, 0);
             tabPageCadastro.Controls.SetChildIndex(btnCancelar, 0);
             tabPageCadastro.Controls.SetChildIndex(btnSalvar, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             // 
             // materialTabControl
             // 
@@ -146,7 +149,7 @@
             cboPaymentMethod.MaxDropDownItems = 4;
             cboPaymentMethod.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboPaymentMethod.Name = "cboPaymentMethod";
-            cboPaymentMethod.Size = new Size(195, 49);
+            cboPaymentMethod.Size = new Size(143, 49);
             cboPaymentMethod.StartIndex = 0;
             cboPaymentMethod.TabIndex = 8;
             // 
@@ -162,6 +165,7 @@
             cboCategory.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             cboCategory.ForeColor = Color.FromArgb(222, 0, 0, 0);
             cboCategory.FormattingEnabled = true;
+            cboCategory.Hint = "Categoria";
             cboCategory.IntegralHeight = false;
             cboCategory.ItemHeight = 43;
             cboCategory.Location = new Point(254, 147);
@@ -187,7 +191,7 @@
             txtTransactionDate.Hint = "Data de Transação";
             txtTransactionDate.InsertKeyMode = InsertKeyMode.Default;
             txtTransactionDate.LeadingIcon = null;
-            txtTransactionDate.Location = new Point(346, 7);
+            txtTransactionDate.Location = new Point(294, 6);
             txtTransactionDate.Mask = "00/00/0000";
             txtTransactionDate.MaxLength = 32767;
             txtTransactionDate.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -204,7 +208,7 @@
             txtTransactionDate.SelectionLength = 0;
             txtTransactionDate.SelectionStart = 0;
             txtTransactionDate.ShortcutsEnabled = true;
-            txtTransactionDate.Size = new Size(164, 48);
+            txtTransactionDate.Size = new Size(132, 48);
             txtTransactionDate.SkipLiterals = true;
             txtTransactionDate.TabIndex = 10;
             txtTransactionDate.TabStop = false;
@@ -288,6 +292,37 @@
             txtCategoryId.TrailingIcon = null;
             txtCategoryId.UseSystemPasswordChar = false;
             // 
+            // txtId
+            // 
+            txtId.AnimateReadOnly = false;
+            txtId.AutoCompleteMode = AutoCompleteMode.None;
+            txtId.AutoCompleteSource = AutoCompleteSource.None;
+            txtId.BackgroundImageLayout = ImageLayout.None;
+            txtId.CharacterCasing = CharacterCasing.Normal;
+            txtId.Depth = 0;
+            txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtId.HideSelection = true;
+            txtId.Hint = "ID";
+            txtId.LeadingIcon = null;
+            txtId.Location = new Point(434, 6);
+            txtId.MaxLength = 32767;
+            txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtId.Name = "txtId";
+            txtId.PasswordChar = '\0';
+            txtId.PrefixSuffixText = null;
+            txtId.ReadOnly = true;
+            txtId.RightToLeft = RightToLeft.No;
+            txtId.SelectedText = "";
+            txtId.SelectionLength = 0;
+            txtId.SelectionStart = 0;
+            txtId.ShortcutsEnabled = true;
+            txtId.Size = new Size(76, 48);
+            txtId.TabIndex = 12;
+            txtId.TabStop = false;
+            txtId.TextAlign = HorizontalAlignment.Left;
+            txtId.TrailingIcon = null;
+            txtId.UseSystemPasswordChar = false;
+            // 
             // RegisterTransaction
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -310,5 +345,6 @@
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtValue;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtTransactionDate;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtCategoryId;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
     }
 }

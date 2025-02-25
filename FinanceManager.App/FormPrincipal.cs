@@ -1,5 +1,6 @@
 using FinanceManager.App.Cadastros;
 using FinanceManager.App.Infra;
+using FinanceManager.App.Outros;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
 
@@ -31,6 +32,11 @@ namespace FinanceManager.App
         private void registrarTransacaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Exibeformulario<RegisterTransaction>();
+        }
+
+        private void graficosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<Reports>();
         }
 
         private void Exibeformulario<TFormlario>() where TFormlario : Form

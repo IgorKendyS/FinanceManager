@@ -10,6 +10,7 @@ using FinanceManager.Service.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using FinanceManager.App.Outros;
 
 namespace FinanceManager.App.Infra
 {
@@ -52,6 +53,7 @@ namespace FinanceManager.App.Infra
             Services.AddTransient<RegisterPaymentMethod, RegisterPaymentMethod>();
             Services.AddTransient<RegisterCategory, RegisterCategory>();
             Services.AddTransient<RegisterTransaction, RegisterTransaction>();
+            Services.AddTransient<Reports, Reports>();
 
             // Mapping
             Services.AddSingleton(new MapperConfiguration(config =>
