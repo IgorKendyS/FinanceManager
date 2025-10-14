@@ -28,7 +28,9 @@ namespace FinanceManager.App.Cadastros
         {
             paymentMethod.Name = txtName.Text;
             paymentMethod.Type = cboType.SelectedItem?.ToString() ?? "";
-            paymentMethod.UserId = int.Parse(txtUserId.Text);
+
+            // TODO: Replace with the ID of the currently logged-in user
+            paymentMethod.UserId = 1; 
 
             if (paymentMethod.Type == "Crédito" && decimal.TryParse(txtLimit.Text, out var limit))
                 paymentMethod.CardLimit = limit;
@@ -85,7 +87,6 @@ namespace FinanceManager.App.Cadastros
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtName.Text = linha?.Cells["Name"].Value.ToString();
             cboType.SelectedItem = linha?.Cells["Type"].Value.ToString();
-            txtUserId.Text = linha?.Cells["UserId"].Value.ToString();
 
             if (cboType.SelectedItem?.ToString() == "Crédito")
             {

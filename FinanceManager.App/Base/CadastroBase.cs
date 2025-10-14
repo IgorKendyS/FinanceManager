@@ -31,6 +31,7 @@ namespace FinanceManager.App.Base
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            LimpaCampos();
             Salvar();
         }
 

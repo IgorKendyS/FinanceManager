@@ -20,7 +20,7 @@ namespace FinanceManager.Repository.Mapping
             builder.Property(c => c.Type)
                 .IsRequired()
                 .HasColumnName("Type")
-                .HasColumnType("enum('Expense', 'Income')");
+                .HasColumnType("enum('Saída', 'Entrada')");
 
             builder.Property(c => c.Description)
                 .HasColumnName("Description")

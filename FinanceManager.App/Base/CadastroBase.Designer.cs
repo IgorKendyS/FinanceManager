@@ -68,7 +68,7 @@
             tabPageCadastro.ImageKey = "form.png";
             tabPageCadastro.Location = new Point(4, 31);
             tabPageCadastro.Name = "tabPageCadastro";
-            tabPageCadastro.Padding = new Padding(3, 3, 3, 3);
+            tabPageCadastro.Padding = new Padding(3);
             tabPageCadastro.Size = new Size(582, 427);
             tabPageCadastro.TabIndex = 0;
             tabPageCadastro.Text = "Cadastro";
@@ -125,8 +125,8 @@
             tabPageConsulta.ImageKey = "search.png";
             tabPageConsulta.Location = new Point(4, 31);
             tabPageConsulta.Name = "tabPageConsulta";
-            tabPageConsulta.Padding = new Padding(3, 3, 3, 3);
-            tabPageConsulta.Size = new Size(583, 427);
+            tabPageConsulta.Padding = new Padding(3);
+            tabPageConsulta.Size = new Size(582, 427);
             tabPageConsulta.TabIndex = 1;
             tabPageConsulta.Text = "Consulta";
             tabPageConsulta.UseVisualStyleBackColor = true;
@@ -203,6 +203,8 @@
             dataGridViewConsulta.RowHeadersWidth = 51;
             dataGridViewConsulta.Size = new Size(504, 284);
             dataGridViewConsulta.TabIndex = 0;
+            dataGridViewConsulta.CellContentDoubleClick += dataGridViewConsulta_CellDoubleClick;
+            dataGridViewConsulta.CellDoubleClick += dataGridViewConsulta_CellDoubleClick;
             // 
             // imageList1
             // 

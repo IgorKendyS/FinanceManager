@@ -42,8 +42,9 @@ namespace FinanceManager.App.Cadastros
                 {
                     var category = new Category();
                     PreencheObjeto(category);
-                    _categoryService.Add<Category, Category, CategoryValidator>(category);
+                    category = _categoryService.Add<Category, Category, CategoryValidator>(category);
                 }
+                CarregaGrid();
                 materialTabControl.SelectedIndex = 1;
             }
             catch (Exception ex)
@@ -77,6 +78,7 @@ namespace FinanceManager.App.Cadastros
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtName.Text = linha?.Cells["Name"].Value.ToString();
             txtMLDescription.Text = linha?.Cells["Description"].Value.ToString();
+            cboType.SelectedItem = linha?.Cells["Type"].Value.ToString();
         }
     }
 }

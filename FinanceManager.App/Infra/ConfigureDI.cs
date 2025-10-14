@@ -22,7 +22,10 @@ namespace FinanceManager.App.Infra
         public static void ConfiguraServices()
         {
             Services = new ServiceCollection();
-            var strCon = File.ReadAllText("Config/DatabaseSettings.txt");
+            var basePath = AppContext.BaseDirectory;
+            var configPath = Path.Combine(basePath, "..", "..", "..", "Config", "DatabaseSettings.txt");
+            var strCon = File.ReadAllText(configPath);
+
 
             Services.AddDbContext<MySqlContext>(options =>
             {

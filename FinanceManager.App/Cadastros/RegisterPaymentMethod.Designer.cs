@@ -133,7 +133,7 @@
             cboType.FormattingEnabled = true;
             cboType.IntegralHeight = false;
             cboType.ItemHeight = 43;
-            cboType.Items.AddRange(new object[] { "Crédito", "Débito" });
+            cboType.Items.AddRange(new object[] { "PIX/Dinheiro", "Crédito", "Débito" });
             cboType.Location = new Point(6, 60);
             cboType.MaxDropDownItems = 4;
             cboType.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -150,6 +150,7 @@
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
+            txtId.Enabled = false;
             txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.Hint = "ID";
@@ -160,7 +161,7 @@
             txtId.Name = "txtId";
             txtId.PasswordChar = '\0';
             txtId.PrefixSuffixText = null;
-            txtId.ReadOnly = false;
+            txtId.ReadOnly = true;
             txtId.RightToLeft = RightToLeft.No;
             txtId.SelectedText = "";
             txtId.SelectionLength = 0;
@@ -211,6 +212,7 @@
             ClientSize = new Size(537, 450);
             Location = new Point(0, 0);
             Name = "RegisterPaymentMethod";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Método de Pagamento";
             tabPageCadastro.ResumeLayout(false);
             tabPageCadastro.PerformLayout();

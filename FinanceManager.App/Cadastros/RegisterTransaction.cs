@@ -10,13 +10,16 @@ namespace FinanceManager.App.Cadastros
     {
         private readonly IBaseService<Transaction> _transactionService;
         private readonly IBaseService<Category> _categoryService;
+        private readonly IBaseService<PaymentMethod> _paymentMethodService;
         private readonly IBaseService<User> _userService;
         public RegisterTransaction(IBaseService<Transaction> transactionService,
                                     IBaseService<Category> categoryService,
+                                    IBaseService<PaymentMethod> paymentMethodService,
                                     IBaseService<User> userService)
         {
             _transactionService = transactionService;
             _categoryService = categoryService;
+            _paymentMethodService = paymentMethodService;
             _userService = userService;
 
             InitializeComponent();
@@ -26,9 +29,12 @@ namespace FinanceManager.App.Cadastros
 
         private void CarregarCombo()
         {
-            cboPaymentMethod.Items.Add("Crédito");
-            cboPaymentMethod.Items.Add("Débito");
-            cboPaymentMethod.Items.Add("Dinheiro");
+            var paymentMethod = _paymentMethodService.Get<PaymentMethod>().ToList();
+            cboPaymentMethod.ValueMember = "Id";
+            cboPaymentMethod.DisplayMember = "Name";
+            cboPaymentMethod.DataSource = paymentMethod;
+
+            cboPaymentMethod.SelectedIndexChanged += CboPaymentMethod_SelectedIndexChanged;
 
             var categorias = _categoryService.Get<Category>().ToList();
 
@@ -40,6 +46,18 @@ namespace FinanceManager.App.Cadastros
             cboCategory.DataSource = categorias;
 
             cboCategory.SelectedIndexChanged += CboCategory_SelectedIndexChanged;
+        }
+
+        private void CboPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboPaymentMethod.SelectedValue != null && int.TryParse(cboPaymentMethod.SelectedValue.ToString(), out int paymentMethodId) && paymentMethodId >= 0)
+            {
+                txtIdUser.Text = paymentMethodId.ToString();
+            }
+            else
+            {
+                txtIdUser.Text = "";
+            }
         }
 
         private void CboCategory_SelectedIndexChanged(object sender, EventArgs e)

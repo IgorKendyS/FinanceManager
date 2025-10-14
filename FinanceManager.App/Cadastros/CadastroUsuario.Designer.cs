@@ -48,7 +48,6 @@
             tabPageCadastro.Controls.Add(txtEmail);
             tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtNome);
-            tabPageCadastro.Location = new Point(4, 31);
             tabPageCadastro.Margin = new Padding(3, 4, 3, 4);
             tabPageCadastro.Padding = new Padding(3, 4, 3, 4);
             tabPageCadastro.Size = new Size(527, 347);
@@ -219,7 +218,7 @@
             txtSenha.MaxLength = 32767;
             txtSenha.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtSenha.Name = "txtSenha";
-            txtSenha.PasswordChar = '\0';
+            txtSenha.PasswordChar = '●';
             txtSenha.PrefixSuffixText = null;
             txtSenha.ReadOnly = false;
             txtSenha.RightToLeft = RightToLeft.No;
@@ -232,7 +231,7 @@
             txtSenha.TabStop = false;
             txtSenha.TextAlign = HorizontalAlignment.Left;
             txtSenha.TrailingIcon = null;
-            txtSenha.UseSystemPasswordChar = false;
+            txtSenha.UseSystemPasswordChar = true;
             // 
             // txtDataCadastro
             // 

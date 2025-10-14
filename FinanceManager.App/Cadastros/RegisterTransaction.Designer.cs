@@ -50,7 +50,6 @@
             tabPageCadastro.Controls.Add(txtCategoryId);
             tabPageCadastro.Controls.Add(txtIdUser);
             tabPageCadastro.Controls.Add(txtDescription);
-            tabPageCadastro.Location = new Point(4, 31);
             tabPageCadastro.Size = new Size(525, 274);
             tabPageCadastro.Controls.SetChildIndex(txtDescription, 0);
             tabPageCadastro.Controls.SetChildIndex(txtIdUser, 0);
@@ -108,6 +107,7 @@
             txtIdUser.BackgroundImageLayout = ImageLayout.None;
             txtIdUser.CharacterCasing = CharacterCasing.Normal;
             txtIdUser.Depth = 0;
+            txtIdUser.Enabled = false;
             txtIdUser.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtIdUser.HideSelection = true;
             txtIdUser.Hint = "Id Usuário";
@@ -118,7 +118,7 @@
             txtIdUser.Name = "txtIdUser";
             txtIdUser.PasswordChar = '\0';
             txtIdUser.PrefixSuffixText = null;
-            txtIdUser.ReadOnly = false;
+            txtIdUser.ReadOnly = true;
             txtIdUser.RightToLeft = RightToLeft.No;
             txtIdUser.SelectedText = "";
             txtIdUser.SelectionLength = 0;
@@ -269,6 +269,7 @@
             txtCategoryId.BackgroundImageLayout = ImageLayout.None;
             txtCategoryId.CharacterCasing = CharacterCasing.Normal;
             txtCategoryId.Depth = 0;
+            txtCategoryId.Enabled = false;
             txtCategoryId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtCategoryId.HideSelection = true;
             txtCategoryId.Hint = "Id Catergoria";
@@ -300,6 +301,7 @@
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
+            txtId.Enabled = false;
             txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.Hint = "ID";
@@ -330,6 +332,7 @@
             ClientSize = new Size(539, 376);
             Location = new Point(0, 0);
             Name = "RegisterTransaction";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Registro de Transação";
             tabPageCadastro.ResumeLayout(false);
             tabPageCadastro.PerformLayout();

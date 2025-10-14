@@ -42,10 +42,9 @@
             tabPageCadastro.Controls.Add(txtMLDescription);
             tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtName);
-            tabPageCadastro.Location = new Point(4, 31);
             tabPageCadastro.Margin = new Padding(3, 4, 3, 4);
             tabPageCadastro.Padding = new Padding(3, 4, 3, 4);
-            tabPageCadastro.Size = new Size(542, 268);
+            tabPageCadastro.Size = new Size(519, 352);
             tabPageCadastro.Controls.SetChildIndex(btnCancelar, 0);
             tabPageCadastro.Controls.SetChildIndex(btnSalvar, 0);
             tabPageCadastro.Controls.SetChildIndex(txtName, 0);
@@ -57,31 +56,31 @@
             // 
             materialTabControl.Location = new Point(3, 85);
             materialTabControl.Margin = new Padding(3, 4, 3, 4);
-            materialTabControl.Size = new Size(550, 303);
+            materialTabControl.Size = new Size(527, 387);
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(332, 212);
+            btnCancelar.Location = new Point(324, 304);
             btnCancelar.Margin = new Padding(5, 8, 5, 8);
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(456, 212);
+            btnSalvar.Location = new Point(430, 304);
             btnSalvar.Margin = new Padding(5, 8, 5, 8);
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(400, 399);
+            btnEditar.Location = new Point(349, 301);
             btnEditar.Margin = new Padding(5, 8, 5, 8);
             // 
             // btnNovo
             // 
-            btnNovo.Location = new Point(318, 399);
+            btnNovo.Location = new Point(275, 301);
             btnNovo.Margin = new Padding(5, 8, 5, 8);
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(490, 399);
+            btnExcluir.Location = new Point(430, 301);
             btnExcluir.Margin = new Padding(5, 8, 5, 8);
             // 
             // txtName
@@ -123,6 +122,7 @@
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
+            txtId.Enabled = false;
             txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.Hint = "ID";
@@ -185,7 +185,7 @@
             cboType.FormattingEnabled = true;
             cboType.IntegralHeight = false;
             cboType.ItemHeight = 43;
-            cboType.Items.AddRange(new object[] { "Entrada", "Saída" });
+            cboType.Items.AddRange(new object[] { "Saída", "Entrada" });
             cboType.Location = new Point(287, 6);
             cboType.MaxDropDownItems = 4;
             cboType.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -198,11 +198,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(556, 392);
+            ClientSize = new Size(533, 476);
             Location = new Point(0, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "RegisterCategory";
             Padding = new Padding(3, 85, 3, 4);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro Categoria";
             tabPageCadastro.ResumeLayout(false);
             tabPageCadastro.PerformLayout();
