@@ -26,7 +26,7 @@ namespace FinanceManager.Test
                 var port = "3306";
                 var database = "financas";
                 var username = "root";
-                var password = "ifsp2024";
+                var password = "";
                 var strCon = $"Server={server};Port={port};Database={database};Uid={username};Pwd={password}";
                 if (!optionsBuilder.IsConfigured)
                 {

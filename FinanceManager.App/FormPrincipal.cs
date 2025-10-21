@@ -41,12 +41,25 @@ namespace FinanceManager.App
 
         private void Exibeformulario<TFormlario>() where TFormlario : Form
         {
-            var cad = ConfigureDI.ServicesProvider!.GetService<TFormlario>();
-            if (cad != null && !cad.IsDisposed)
+            // Check if a form of this type is already open among the MDI children
+            var existingForm = this.MdiChildren.OfType<TFormlario>().FirstOrDefault();
+
+            if (existingForm != null)
             {
-                cad.MdiParent = this;
-                cad.Show();
+                // If the form exists, bring it to the front
+                existingForm.BringToFront();
+            }
+            else
+            {
+                // If it doesn't exist, create a new one using DI
+                var newForm = ConfigureDI.ServicesProvider!.GetService<TFormlario>();
+                if (newForm != null && !newForm.IsDisposed)
+                {
+                    newForm.MdiParent = this;
+                    newForm.Show();
+                }
             }
         }
+
     }
 }

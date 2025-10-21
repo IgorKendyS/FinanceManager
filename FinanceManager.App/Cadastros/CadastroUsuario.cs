@@ -3,6 +3,7 @@ using FinanceManager.App.Models;
 using FinanceManager.Domain.Base;
 using FinanceManager.Domain.Entities;
 using FinanceManager.Service.Validators;
+using System.Diagnostics;
 
 namespace FinanceManager.App.Cadastros
 {
@@ -43,6 +44,7 @@ namespace FinanceManager.App.Cadastros
                 {
                     var user = new User();
                     PreencheObjeto(user);
+                    Debug.WriteLine(user);
                     _userService.Add<User, User, UserValidator>(user);
                 }
 

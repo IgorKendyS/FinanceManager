@@ -136,7 +136,6 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem cadastrosToolStripMenuItem;
-        private ToolStripMenuItem usuárioToolStripMenuItem;
         private ToolStripMenuItem categoriaToolStripMenuItem;
         private ToolStripMenuItem metodoDePagamentoToolStripMenuItem;
         private ToolStripMenuItem transaçõesToolStripMenuItem;
