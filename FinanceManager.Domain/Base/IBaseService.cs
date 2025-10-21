@@ -23,5 +23,7 @@ namespace FinanceManager.Domain.Base
             where TValidator : AbstractValidator<TEntity>
             where TInputModel : class
             where TOutputModel : class;
+
+        Dictionary<DateTime, decimal> GetDailyExpenses();
     }
 }

@@ -1,31 +1,66 @@
-﻿using ReaLTaiizor.Forms;
+﻿using FinanceManager.Domain.Base;
+using FinanceManager.Domain.Entities;
+using ReaLTaiizor.Forms;
 using ScottPlot;
 
 namespace FinanceManager.App.Outros
 {
     public partial class Reports : MaterialForm
     {
-        public Reports()
+        private readonly IBaseService<Transaction> _transactionService;
+
+        // Modifique o construtor
+        public Reports(IBaseService<Transaction> transactionService)
         {
             InitializeComponent();
+            _transactionService = transactionService;
         }
 
         private void formsPlot1_Load(object sender, EventArgs e)
         {
-            double[] dataX = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            double[] dataY = { 10, 20, 30, 25, 15, 40, 50, 60, 70, 80 };
-            CreateBarChart("Gráfico de Barras", "Dias", "Valores", dataX, dataY);
+            try
+            {
+                // 1. Busca os dados reais do serviço
+                var dailyExpenses = _transactionService.GetDailyExpenses();
+
+                if (!dailyExpenses.Any())
+                {
+                    MessageBox.Show("Não há dados de despesas para exibir no gráfico.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // 2. Prepara os dados para o gráfico
+                var sortedData = dailyExpenses.OrderBy(kvp => kvp.Key).ToList();
+                double[] values = sortedData.Select(kvp => (double)kvp.Value).ToArray();
+                double[] positions = sortedData.Select(kvp => kvp.Key.ToOADate()).ToArray();
+                string[] labels = sortedData.Select(kvp => kvp.Key.ToString("dd/MM")).ToArray();
+
+                // 3. Chama seu método para criar o gráfico com os dados reais
+                CreateBarChart("Gastos Diários", "Data", "Valor Gasto (R$)", positions, values, labels);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro ao gerar o gráfico: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void CreateBarChart(string title, string xLabel, string yLabel, double[] dataX, double[] dataY)
+        // Pequeno ajuste para aceitar os labels do eixo X
+        private void CreateBarChart(string title, string xLabel, string yLabel, double[] positions, double[] values, string[] labels)
         {
             var plt = formsPlot1.Plot;
             plt.Clear();
-            plt.AddBar(dataY, dataX);
+            
+            plt.AddBar(values, positions);
             plt.Title(title);
             plt.XLabel(xLabel);
             plt.YLabel(yLabel);
 
+            // Adiciona os labels formatados no eixo X
+            plt.XTicks(positions, labels);
+            plt.XAxis.TickLabelStyle(rotation: 45);
+
+            plt.SetAxisLimits(yMin: 0); // Garante que o eixo Y comece em 0
+            
             formsPlot1.Refresh();
         }
 

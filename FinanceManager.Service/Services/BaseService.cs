@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using FinanceManager.Domain.Base;
+using FinanceManager.Domain.Entities;
 
 namespace FinanceManager.Service.Services
 {
@@ -76,5 +77,29 @@ namespace FinanceManager.Service.Services
 
             validator.ValidateAndThrow(obj);
         }
+
+        public Dictionary<DateTime, decimal> GetDailyExpenses()
+        {
+            if (typeof(TEntity) != typeof(Transaction))
+            {
+                throw new InvalidOperationException("Este método só pode ser chamado para transações.");
+            }
+
+            var transactions = _baseRepository.Select() as IEnumerable<Transaction>;
+
+            // Filtra apenas as despesas (Saída)
+            // Assumindo que o tipo da categoria para despesa é 'Saída'
+            var expenses = transactions?
+                .Where(t => t.Category != null && t.Category.Type == "Saída")
+                .ToList();
+
+            // Agrupa por dia e soma os valores
+            var dailyExpenses = expenses?
+                .GroupBy(t => t.Date.Date) // Agrupa pela data, ignorando a hora
+                .ToDictionary(g => g.Key, g => g.Sum(t => t.Amount));
+
+            return dailyExpenses;
+        }
+    
     }
 }
