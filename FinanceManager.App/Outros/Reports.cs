@@ -12,33 +12,31 @@ namespace FinanceManager.App.Outros
 
         private void formsPlot1_Load(object sender, EventArgs e)
         {
-            CreateChart();
-        }
-
-        private void CreateChart()
-        {
             double[] dataX = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             double[] dataY = { 10, 20, 30, 25, 15, 40, 50, 60, 70, 80 };
+            CreateBarChart("Gráfico de Barras", "Dias", "Valores", dataX, dataY);
+        }
 
+        private void CreateBarChart(string title, string xLabel, string yLabel, double[] dataX, double[] dataY)
+        {
             var plt = formsPlot1.Plot;
             plt.Clear();
-
             plt.AddBar(dataY, dataX);
-            plt.Title("Gráfico de Barras");
-            plt.XLabel("Dias");
-            plt.YLabel("Valores");
+            plt.Title(title);
+            plt.XLabel(xLabel);
+            plt.YLabel(yLabel);
 
             formsPlot1.Refresh();
         }
 
         private void formsPlot2_Load(object sender, EventArgs e)
         {
-            CreateMonthlyChart();
+            DoubleAxis();
         }
 
-        private void CreateMonthlyChart()
+        private void DoubleAxis()
         {
-            var plt = formsPlot2.Plot; // <<< AQUI ESTAVA O ERRO!
+            var plt = formsPlot2.Plot;
             plt.Clear();
 
             // Sinal 1 → eixo padrão (esquerda)
