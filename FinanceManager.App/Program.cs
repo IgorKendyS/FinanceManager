@@ -1,4 +1,5 @@
 using FinanceManager.App.Infra;
+using ScottPlot;
 
 namespace FinanceManager.App
 {
@@ -12,6 +13,7 @@ namespace FinanceManager.App
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+                        
             ConfigureDI.ConfiguraServices();
             ApplicationConfiguration.Initialize();
             Application.Run(new FormPrincipal());

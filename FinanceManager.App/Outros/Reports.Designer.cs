@@ -28,26 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            formsPlot1 = new ScottPlot.FormsPlot();
             mtcReports = new ReaLTaiizor.Controls.MaterialTabControl();
             tpd = new TabPage();
+            formsPlot1 = new ScottPlot.WinForms.FormsPlot();
             materialLabel1 = new ReaLTaiizor.Controls.MaterialLabel();
             tabPage2 = new TabPage();
-            formsPlot2 = new ScottPlot.FormsPlot();
             materialLabel2 = new ReaLTaiizor.Controls.MaterialLabel();
+            fileSystemWatcher1 = new FileSystemWatcher();
+            panel1 = new Panel();
             mtcReports.SuspendLayout();
             tpd.SuspendLayout();
             tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // formsPlot1
-            // 
-            formsPlot1.Location = new Point(50, 71);
-            formsPlot1.Margin = new Padding(4, 3, 4, 3);
-            formsPlot1.Name = "formsPlot1";
-            formsPlot1.Size = new Size(666, 268);
-            formsPlot1.TabIndex = 0;
-            formsPlot1.Load += formsPlot1_Load;
             // 
             // mtcReports
             // 
@@ -65,8 +59,8 @@
             // 
             // tpd
             // 
+            tpd.Controls.Add(panel1);
             tpd.Controls.Add(materialLabel1);
-            tpd.Controls.Add(formsPlot1);
             tpd.Location = new Point(4, 24);
             tpd.Name = "tpd";
             tpd.Padding = new Padding(3);
@@ -74,6 +68,14 @@
             tpd.TabIndex = 0;
             tpd.Text = "Gastos Diários";
             tpd.UseVisualStyleBackColor = true;
+            // 
+            // formsPlot1
+            // 
+            formsPlot1.DisplayScale = 1F;
+            formsPlot1.Location = new Point(52, 21);
+            formsPlot1.Name = "formsPlot1";
+            formsPlot1.Size = new Size(478, 239);
+            formsPlot1.TabIndex = 2;
             // 
             // materialLabel1
             // 
@@ -90,7 +92,6 @@
             // tabPage2
             // 
             tabPage2.Controls.Add(materialLabel2);
-            tabPage2.Controls.Add(formsPlot2);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -98,15 +99,6 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Gastos Mensais";
             tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // formsPlot2
-            // 
-            formsPlot2.Location = new Point(51, 71);
-            formsPlot2.Margin = new Padding(4, 3, 4, 3);
-            formsPlot2.Name = "formsPlot2";
-            formsPlot2.Size = new Size(666, 268);
-            formsPlot2.TabIndex = 0;
-            formsPlot2.Load += formsPlot2_Load;
             // 
             // materialLabel2
             // 
@@ -119,6 +111,19 @@
             materialLabel2.Size = new Size(115, 19);
             materialLabel2.TabIndex = 2;
             materialLabel2.Text = "Gastos Mensais";
+            // 
+            // fileSystemWatcher1
+            // 
+            fileSystemWatcher1.EnableRaisingEvents = true;
+            fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(formsPlot1);
+            panel1.Location = new Point(94, 70);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(581, 279);
+            panel1.TabIndex = 3;
             // 
             // Reports
             // 
@@ -135,16 +140,19 @@
             tpd.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private ScottPlot.FormsPlot formsPlot1;
         private ReaLTaiizor.Controls.MaterialTabControl mtcReports;
         private TabPage tpd;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel1;
         private TabPage tabPage2;
-        private ScottPlot.FormsPlot formsPlot2;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel2;
+        private FileSystemWatcher fileSystemWatcher1;
+        private ScottPlot.WinForms.FormsPlot formsPlot1;
+        private Panel panel1;
     }
 }
