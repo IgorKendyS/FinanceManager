@@ -84,9 +84,13 @@ namespace FinanceManager.App.Cadastros
                 transaction.Amount = value;
             }
 
-            if (int.TryParse(cboPaymentMethod.SelectedValue?.ToString(), out var paymentMethodId))
+            if (int.TryParse(cboPaymentMethod.SelectedValue?.ToString(), out var paymentMethodId) && paymentMethodId > 0)
             {
                 transaction.PaymentMethodId = paymentMethodId;
+            }
+            else
+            {
+                transaction.PaymentMethodId = null;
             }
 
             if (DateTime.TryParse(txtTransactionDate.Text, out var transactionDate))

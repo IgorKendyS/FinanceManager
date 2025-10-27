@@ -31,9 +31,14 @@ namespace FinanceManager.Repository.Repository
                 _mySqlcontext.Set<TEntity>().Add(entity);
                 _mySqlcontext.SaveChanges();
             }
+            catch (DbUpdateException ex)
+            {
+                var innerExceptionMessage = ex.InnerException?.Message ?? ex.Message;
+                throw new Exception($"Erro de banco de dados ao inserir a entidade: {innerExceptionMessage}", ex);
+            }
             catch (Exception ex)
             {
-                throw new Exception($"Erro ao inserir a entidade: {ex.Message}", ex);
+                throw new Exception($"Erro inesperado ao inserir a entidade: {ex.Message}", ex);
             }
         }
 
@@ -44,9 +49,14 @@ namespace FinanceManager.Repository.Repository
                 _mySqlcontext.Entry(entity).State = EntityState.Modified;
                 _mySqlcontext.SaveChanges();
             }
+            catch (DbUpdateException ex)
+            {
+                var innerExceptionMessage = ex.InnerException?.Message ?? ex.Message;
+                throw new Exception($"Erro de banco de dados ao atualizar a entidade: {innerExceptionMessage}", ex);
+            }
             catch (Exception ex)
             {
-                throw new Exception($"Erro ao atualizar a entidade: {ex.Message}", ex);
+                throw new Exception($"Erro inesperado ao atualizar a entidade: {ex.Message}", ex);
             }
         }
 

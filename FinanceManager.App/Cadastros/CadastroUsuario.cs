@@ -25,7 +25,14 @@ namespace FinanceManager.App.Cadastros
             user.Email = txtEmail.Text;
             user.PasswordHash = txtSenha.Text;
             user.Phone = txtTelefone.Text;
+
+            if (user.Id == 0)
+            {
+                user.Created = DateTime.Now;
+                user.LastLogin = DateTime.Now;
+            }
         }
+        
 
         protected override void Salvar()
         {

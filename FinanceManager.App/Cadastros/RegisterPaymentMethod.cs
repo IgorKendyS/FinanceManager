@@ -3,6 +3,7 @@ using FinanceManager.App.Models;
 using FinanceManager.Domain.Base;
 using FinanceManager.Domain.Entities;
 using FinanceManager.Service.Validators;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinanceManager.App.Cadastros
 {
@@ -68,6 +69,10 @@ namespace FinanceManager.App.Cadastros
             try
             {
                 _paymentMethodService.Delete(id);
+            }
+            catch (DbUpdateException)
+            {
+                MessageBox.Show("Não é possível excluir este método de pagamento, pois ele já está sendo utilizado em transações.", "Erro de Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {

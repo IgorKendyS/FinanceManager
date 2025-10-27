@@ -42,7 +42,7 @@ namespace FinanceManager.Repository.Mapping
             builder.HasOne(e => e.PaymentMethod)
                 .WithMany()
                 .HasForeignKey(e => e.PaymentMethodId)
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

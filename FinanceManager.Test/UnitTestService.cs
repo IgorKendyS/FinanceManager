@@ -26,7 +26,7 @@ namespace FinanceManager.Test
                 var port = "3306";
                 var database = "financas";
                 var username = "root";
-                var password = "";
+                var password = "ifsp2024";
                 var strCon = $"Server={server};Port={port};Database={database};" +
                             $"Uid={username};Pwd={password}";
                 options.UseMySql(strCon, ServerVersion.AutoDetect(strCon), opt =>

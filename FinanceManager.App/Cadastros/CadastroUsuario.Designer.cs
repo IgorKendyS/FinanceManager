@@ -31,20 +31,20 @@
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtEmail = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtTelefone = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtSenha = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtDataCadastro = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtDataUltimoLogin = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
+            txtTelefone = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             tabPageCadastro.SuspendLayout();
             materialTabControl.SuspendLayout();
             SuspendLayout();
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(txtTelefone);
             tabPageCadastro.Controls.Add(txtDataUltimoLogin);
             tabPageCadastro.Controls.Add(txtDataCadastro);
             tabPageCadastro.Controls.Add(txtSenha);
-            tabPageCadastro.Controls.Add(txtTelefone);
             tabPageCadastro.Controls.Add(txtEmail);
             tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtNome);
@@ -54,12 +54,12 @@
             tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             tabPageCadastro.Controls.SetChildIndex(txtEmail, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtTelefone, 0);
             tabPageCadastro.Controls.SetChildIndex(txtSenha, 0);
             tabPageCadastro.Controls.SetChildIndex(txtDataCadastro, 0);
             tabPageCadastro.Controls.SetChildIndex(txtDataUltimoLogin, 0);
             tabPageCadastro.Controls.SetChildIndex(btnCancelar, 0);
             tabPageCadastro.Controls.SetChildIndex(btnSalvar, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtTelefone, 0);
             // 
             // materialTabControl
             // 
@@ -170,37 +170,6 @@
             txtEmail.TextAlign = HorizontalAlignment.Left;
             txtEmail.TrailingIcon = null;
             txtEmail.UseSystemPasswordChar = false;
-            // 
-            // txtTelefone
-            // 
-            txtTelefone.AnimateReadOnly = false;
-            txtTelefone.AutoCompleteMode = AutoCompleteMode.None;
-            txtTelefone.AutoCompleteSource = AutoCompleteSource.None;
-            txtTelefone.BackgroundImageLayout = ImageLayout.None;
-            txtTelefone.CharacterCasing = CharacterCasing.Normal;
-            txtTelefone.Depth = 0;
-            txtTelefone.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtTelefone.HideSelection = true;
-            txtTelefone.Hint = "Telefone";
-            txtTelefone.LeadingIcon = null;
-            txtTelefone.Location = new Point(3, 114);
-            txtTelefone.MaxLength = 32767;
-            txtTelefone.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtTelefone.Name = "txtTelefone";
-            txtTelefone.PasswordChar = '\0';
-            txtTelefone.PrefixSuffixText = null;
-            txtTelefone.ReadOnly = false;
-            txtTelefone.RightToLeft = RightToLeft.No;
-            txtTelefone.SelectedText = "";
-            txtTelefone.SelectionLength = 0;
-            txtTelefone.SelectionStart = 0;
-            txtTelefone.ShortcutsEnabled = true;
-            txtTelefone.Size = new Size(506, 48);
-            txtTelefone.TabIndex = 5;
-            txtTelefone.TabStop = false;
-            txtTelefone.TextAlign = HorizontalAlignment.Left;
-            txtTelefone.TrailingIcon = null;
-            txtTelefone.UseSystemPasswordChar = false;
             // 
             // txtSenha
             // 
@@ -321,6 +290,50 @@
             txtDataUltimoLogin.UseSystemPasswordChar = false;
             txtDataUltimoLogin.ValidatingType = null;
             // 
+            // txtTelefone
+            // 
+            txtTelefone.AllowPromptAsInput = true;
+            txtTelefone.AnimateReadOnly = false;
+            txtTelefone.AsciiOnly = false;
+            txtTelefone.BackgroundImageLayout = ImageLayout.None;
+            txtTelefone.BeepOnError = false;
+            txtTelefone.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
+            txtTelefone.Depth = 0;
+            txtTelefone.Enabled = false;
+            txtTelefone.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtTelefone.HidePromptOnLeave = false;
+            txtTelefone.HideSelection = true;
+            txtTelefone.Hint = "Telefone";
+            txtTelefone.InsertKeyMode = InsertKeyMode.Default;
+            txtTelefone.LeadingIcon = null;
+            txtTelefone.Location = new Point(6, 114);
+            txtTelefone.Mask = "(00) 00000-0000";
+            txtTelefone.MaxLength = 32767;
+            txtTelefone.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.PasswordChar = '\0';
+            txtTelefone.PrefixSuffixText = null;
+            txtTelefone.PromptChar = '_';
+            txtTelefone.ReadOnly = false;
+            txtTelefone.RejectInputOnFirstFailure = false;
+            txtTelefone.ResetOnPrompt = true;
+            txtTelefone.ResetOnSpace = true;
+            txtTelefone.RightToLeft = RightToLeft.No;
+            txtTelefone.SelectedText = "";
+            txtTelefone.SelectionLength = 0;
+            txtTelefone.SelectionStart = 0;
+            txtTelefone.ShortcutsEnabled = true;
+            txtTelefone.Size = new Size(503, 48);
+            txtTelefone.SkipLiterals = true;
+            txtTelefone.TabIndex = 11;
+            txtTelefone.TabStop = false;
+            txtTelefone.Text = "(  )      -";
+            txtTelefone.TextAlign = HorizontalAlignment.Left;
+            txtTelefone.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtTelefone.TrailingIcon = null;
+            txtTelefone.UseSystemPasswordChar = false;
+            txtTelefone.ValidatingType = null;
+            // 
             // CadastroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -341,11 +354,11 @@
         #endregion
 
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtSenha;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtTelefone;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtEmail;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataCadastro;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataUltimoLogin;
+        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtTelefone;
     }
 }
