@@ -27,4 +27,16 @@
     <Folder Include="Config\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Outros\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Outros\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Outros\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

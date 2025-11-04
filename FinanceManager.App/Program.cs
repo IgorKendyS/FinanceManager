@@ -1,5 +1,8 @@
 using FinanceManager.App.Infra;
-using ScottPlot;
+using FinanceManager.App.Outros;
+using FinanceManager.Domain.Base;
+using FinanceManager.Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FinanceManager.App
 {
@@ -13,10 +16,17 @@ namespace FinanceManager.App
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-                        
+
             ConfigureDI.ConfiguraServices();
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormPrincipal());
+
+            var userService = ConfigureDI.ServicesProvider.GetRequiredService<IBaseService<User>>();
+
+            var loginForm = new Login(userService);
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FormPrincipal());
+            }
         }
     }
 }

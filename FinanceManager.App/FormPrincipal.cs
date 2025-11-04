@@ -1,6 +1,7 @@
 using FinanceManager.App.Cadastros;
 using FinanceManager.App.Infra;
 using FinanceManager.App.Outros;
+using FinanceManager.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
 
@@ -9,6 +10,7 @@ namespace FinanceManager.App
 {
     public partial class FormPrincipal : MaterialForm
     {
+        public static User? User { get; set; }
         public FormPrincipal()
         {
             InitializeComponent();
