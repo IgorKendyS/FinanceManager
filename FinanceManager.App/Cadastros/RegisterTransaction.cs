@@ -104,6 +104,14 @@ namespace FinanceManager.App.Cadastros
             {
                 transaction.CategoryId = categoryId;
             }
+            if (FormPrincipal.User?.Id != null)
+            {
+                transaction.UserId = FormPrincipal.User.Id;
+            }
+            else
+            {
+                throw new InvalidOperationException("Usuário não está logado. Não é possível salvar o método de pagamento.");
+            }
         }
 
         protected override void Novo()

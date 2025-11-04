@@ -204,6 +204,7 @@
             txtUserId.TextAlign = HorizontalAlignment.Left;
             txtUserId.TrailingIcon = null;
             txtUserId.UseSystemPasswordChar = false;
+            txtUserId.Visible = false;
             // 
             // RegisterPaymentMethod
             // 

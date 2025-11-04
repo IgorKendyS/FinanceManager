@@ -196,7 +196,7 @@
             txtSenha.SelectionStart = 0;
             txtSenha.ShortcutsEnabled = true;
             txtSenha.Size = new Size(506, 48);
-            txtSenha.TabIndex = 8;
+            txtSenha.TabIndex = 6;
             txtSenha.TabStop = false;
             txtSenha.TextAlign = HorizontalAlignment.Left;
             txtSenha.TrailingIcon = null;
@@ -299,7 +299,6 @@
             txtTelefone.BeepOnError = false;
             txtTelefone.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
             txtTelefone.Depth = 0;
-            txtTelefone.Enabled = false;
             txtTelefone.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtTelefone.HidePromptOnLeave = false;
             txtTelefone.HideSelection = true;
@@ -325,7 +324,7 @@
             txtTelefone.ShortcutsEnabled = true;
             txtTelefone.Size = new Size(503, 48);
             txtTelefone.SkipLiterals = true;
-            txtTelefone.TabIndex = 11;
+            txtTelefone.TabIndex = 5;
             txtTelefone.TabStop = false;
             txtTelefone.Text = "(  )      -";
             txtTelefone.TextAlign = HorizontalAlignment.Left;

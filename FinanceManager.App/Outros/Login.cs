@@ -64,6 +64,7 @@ namespace FinanceManager.App.Outros
                 var user = new User
                 {
                     Created = DateTime.Now,
+                    LastLogin = DateTime.Now,
                     Name = "Administrador",
                     Email = "admin@gmail.com",
                     PasswordHash = ComputeSha256Hash("admin")

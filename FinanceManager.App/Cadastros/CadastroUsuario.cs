@@ -4,11 +4,33 @@ using FinanceManager.Domain.Base;
 using FinanceManager.Domain.Entities;
 using FinanceManager.Service.Validators;
 using System.Diagnostics;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
+
 
 namespace FinanceManager.App.Cadastros
 {
     public partial class CadastroUsuario : CadastroBase
     {
+        private static string ComputeSha256Hash(string rawData)
+        {
+            // Create a SHA256   
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // ComputeHash - returns byte array  
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                // Convert byte array to a string   
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
         private readonly IBaseService<User> _userService;
 
         private List<UserModel>? users;
@@ -23,14 +45,13 @@ namespace FinanceManager.App.Cadastros
         {
             user.Name = txtNome.Text;
             user.Email = txtEmail.Text;
-            user.PasswordHash = txtSenha.Text;
-            user.Phone = txtTelefone.Text;
-
-            if (user.Id == 0)
+            if (!string.IsNullOrWhiteSpace(txtSenha.Text))
             {
-                user.Created = DateTime.Now;
-                user.LastLogin = DateTime.Now;
+                user.PasswordHash = ComputeSha256Hash(txtSenha.Text);
             }
+            user.Phone = Regex.Replace(txtTelefone.Text, @"\D", "");
+            user.Created = DateTime.Now;
+            user.LastLogin = DateTime.Now;
         }
         
 

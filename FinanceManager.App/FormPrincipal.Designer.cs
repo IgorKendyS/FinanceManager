@@ -38,7 +38,10 @@
             relatoriosToolStripMenuItem = new ToolStripMenuItem();
             graficosToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
+            lblUsuarioStatus = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -103,7 +106,7 @@
             // graficosToolStripMenuItem
             // 
             graficosToolStripMenuItem.Name = "graficosToolStripMenuItem";
-            graficosToolStripMenuItem.Size = new Size(180, 22);
+            graficosToolStripMenuItem.Size = new Size(117, 22);
             graficosToolStripMenuItem.Text = "Gráficos";
             graficosToolStripMenuItem.Click += graficosToolStripMenuItem_Click;
             // 
@@ -113,12 +116,28 @@
             sairToolStripMenuItem.Size = new Size(38, 20);
             sairToolStripMenuItem.Text = "Sair";
             // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lblUsuarioStatus });
+            statusStrip1.Location = new Point(3, 425);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(794, 22);
+            statusStrip1.TabIndex = 3;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // lblUsuarioStatus
+            // 
+            lblUsuarioStatus.Name = "lblUsuarioStatus";
+            lblUsuarioStatus.Size = new Size(47, 17);
+            lblUsuarioStatus.Text = "Usuário";
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
+            Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
@@ -128,6 +147,8 @@
             WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -144,5 +165,7 @@
         private ToolStripMenuItem sairToolStripMenuItem;
         private ToolStripMenuItem usuarioToolStripMenuItem;
         private ToolStripMenuItem graficosToolStripMenuItem;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel lblUsuarioStatus;
     }
 }

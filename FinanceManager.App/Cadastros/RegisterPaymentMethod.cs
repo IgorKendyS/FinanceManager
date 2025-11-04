@@ -30,8 +30,14 @@ namespace FinanceManager.App.Cadastros
             paymentMethod.Name = txtName.Text;
             paymentMethod.Type = cboType.SelectedItem?.ToString() ?? "";
 
-            // TODO: Replace with the ID of the currently logged-in user
-            paymentMethod.UserId = 1; 
+            if (FormPrincipal.User?.Id != null)
+            {
+                paymentMethod.UserId = FormPrincipal.User.Id;
+            }
+            else
+            {
+                throw new InvalidOperationException("Usuário não está logado. Não é possível salvar o método de pagamento.");
+            }
 
             if (paymentMethod.Type == "Crédito" && decimal.TryParse(txtLimit.Text, out var limit))
                 paymentMethod.CardLimit = limit;

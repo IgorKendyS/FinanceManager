@@ -5,7 +5,6 @@ using FinanceManager.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
 
-// wpp 18981007529
 namespace FinanceManager.App
 {
     public partial class FormPrincipal : MaterialForm
@@ -14,6 +13,10 @@ namespace FinanceManager.App
         public FormPrincipal()
         {
             InitializeComponent();
+            if (User != null)
+            {
+                lblUsuarioStatus.Text = $"Usuário Logado: {User.Name}";
+            }
         }
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
