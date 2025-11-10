@@ -52,6 +52,11 @@ namespace FinanceManager.App.Cadastros
                 if (IsAlteracao && int.TryParse(txtId.Text, out var id))
                 {
                     var paymentMethod = _paymentMethodService.GetById<PaymentMethod>(id);
+                    if (paymentMethod == null)
+                    {
+                        MessageBox.Show("Método de pagamento não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     PreencheObjeto(paymentMethod);
                     _paymentMethodService.Update<PaymentMethod, PaymentMethod, PaymentMethodValidator>(paymentMethod);
                 }
@@ -88,16 +93,23 @@ namespace FinanceManager.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            paymentMethods = _paymentMethodService.Get<PaymentMethodModel>().ToList();
-            dataGridViewConsulta.DataSource = paymentMethods;
-            dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            if (FormPrincipal.User != null)
+            {
+                paymentMethods = _paymentMethodService.Get<PaymentMethodModel>(p => p.UserId == FormPrincipal.User.Id).ToList();
+                dataGridViewConsulta.DataSource = paymentMethods;
+                dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            }
+            else
+            {
+                dataGridViewConsulta.DataSource = null;
+            }
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
-            txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtName.Text = linha?.Cells["Name"].Value.ToString();
-            cboType.SelectedItem = linha?.Cells["Type"].Value.ToString();
+            txtId.Text = linha?.Cells["Id"].Value?.ToString();
+            txtName.Text = linha?.Cells["Name"].Value?.ToString();
+            cboType.SelectedItem = linha?.Cells["Type"].Value?.ToString();
 
             if (cboType.SelectedItem?.ToString() == "Crédito")
             {

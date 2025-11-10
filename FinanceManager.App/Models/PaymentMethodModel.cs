@@ -8,8 +8,8 @@
         }
 
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; } // Ex: "Credito", "Débito", "Dinheiro/Pix"
+        public string Name { get; set; } = string.Empty;
+        public string Type { get; set; } = string.Empty; // Ex: "Credito", "Débito", "Dinheiro/Pix"
         public decimal? CardLimit { get; set; }
 
         public int UserId { get; set; }

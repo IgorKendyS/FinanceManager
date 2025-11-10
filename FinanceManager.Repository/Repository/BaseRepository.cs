@@ -105,7 +105,32 @@ namespace FinanceManager.Repository.Repository
             }
         }
 
-        public TEntity Select(object id, bool tracking = true, IList<string>? includes = null)
+        public IEnumerable<TEntity> Select(System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate, bool tracking = true, IList<string>? includes = null)
+        {
+            try
+            {
+                IQueryable<TEntity> dbContext = tracking
+                    ? _mySqlcontext.Set<TEntity>().AsQueryable()
+                    : _mySqlcontext.Set<TEntity>().AsNoTracking();
+
+                if (includes != null)
+                {
+                    foreach (var include in includes)
+                    {
+                        dbContext = dbContext.Include(include);
+                    }
+                }
+
+                return dbContext.Where(predicate).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao selecionar entidades: {ex.Message}", ex);
+            }
+        }
+
+
+        public TEntity? Select(object id, bool tracking = true, IList<string>? includes = null)
         {
             try
             {

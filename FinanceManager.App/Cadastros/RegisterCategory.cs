@@ -34,8 +34,13 @@ namespace FinanceManager.App.Cadastros
                     if (int.TryParse(txtId.Text, out var id))
                     {
                         var category = _categoryService.GetById<Category>(id);
+                        if (category == null)
+                        {
+                            MessageBox.Show("Categoria não encontrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         PreencheObjeto(category);
-                        category = _categoryService.Update<Category, Category, CategoryValidator>(category);
+                        _categoryService.Update<Category, Category, CategoryValidator>(category);
                     }
                 }
                 else
@@ -75,10 +80,10 @@ namespace FinanceManager.App.Cadastros
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
-            txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtName.Text = linha?.Cells["Name"].Value.ToString();
-            txtMLDescription.Text = linha?.Cells["Description"].Value.ToString();
-            cboType.SelectedItem = linha?.Cells["Type"].Value.ToString();
+            txtId.Text = linha?.Cells["Id"].Value?.ToString();
+            txtName.Text = linha?.Cells["Name"].Value?.ToString();
+            txtMLDescription.Text = linha?.Cells["Description"].Value?.ToString();
+            cboType.SelectedItem = linha?.Cells["Type"].Value?.ToString();
         }
     }
 }

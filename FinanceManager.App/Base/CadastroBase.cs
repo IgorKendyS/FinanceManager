@@ -53,9 +53,16 @@ namespace FinanceManager.App.Base
                         MessageBoxIcon.Question)
                     == DialogResult.Yes)
                 {
-                    int id = (int)dataGridViewConsulta.SelectedRows[0].Cells["Id"].Value;
-                    Deletar(id);
-                    CarregaGrid();
+                    object? cellValue = dataGridViewConsulta.SelectedRows[0].Cells["Id"].Value;
+                    if (cellValue != null && int.TryParse(cellValue.ToString(), out int id))
+                    {
+                        Deletar(id);
+                        CarregaGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show(@"Não foi possível obter o ID do registro para deletar.", @"Finance Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else

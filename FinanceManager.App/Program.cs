@@ -20,7 +20,7 @@ namespace FinanceManager.App
             ConfigureDI.ConfiguraServices();
             ApplicationConfiguration.Initialize();
 
-            var userService = ConfigureDI.ServicesProvider.GetRequiredService<IBaseService<User>>();
+            var userService = ConfigureDI.ServicesProvider!.GetRequiredService<IBaseService<User>>();
 
             var loginForm = new Login(userService);
             if (loginForm.ShowDialog() == DialogResult.OK)

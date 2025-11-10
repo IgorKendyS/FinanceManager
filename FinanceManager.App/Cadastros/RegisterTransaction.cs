@@ -48,7 +48,7 @@ namespace FinanceManager.App.Cadastros
             cboCategory.SelectedIndexChanged += CboCategory_SelectedIndexChanged;
         }
 
-        private void CboPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
+        private void CboPaymentMethod_SelectedIndexChanged(object? sender, EventArgs e)
         {
             if (cboPaymentMethod.SelectedValue != null && int.TryParse(cboPaymentMethod.SelectedValue.ToString(), out int paymentMethodId) && paymentMethodId >= 0)
             {
@@ -60,7 +60,7 @@ namespace FinanceManager.App.Cadastros
             }
         }
 
-        private void CboCategory_SelectedIndexChanged(object sender, EventArgs e)
+        private void CboCategory_SelectedIndexChanged(object? sender, EventArgs e)
         {
             if (cboCategory.SelectedValue != null && int.TryParse(cboCategory.SelectedValue.ToString(), out int categoryId) && categoryId > 0)
             {
@@ -131,6 +131,10 @@ namespace FinanceManager.App.Cadastros
                 if (IsAlteracao && int.TryParse(txtIdUser.Text, out var id))
                 {
                     var transaction = _transactionService.GetById<Transaction>(id);
+                    if (transaction == null)
+                    {
+                        throw new Exception("Registro não encontrado!");
+                    }
                     PreencheObjeto(transaction);
                     _transactionService.Update<Transaction, Transaction, TransactionValidator>(transaction);
                 }
@@ -187,24 +191,31 @@ namespace FinanceManager.App.Cadastros
         {
             try
             {
-                var transactions = _transactionService.Get<Transaction>().ToList();
-
-                var transactionsDisplay = transactions.Select(t => new
+                if (FormPrincipal.User != null)
                 {
-                    t.Id,
-                    UserName = GetUserById(t.UserId),
-                    Amount = t.Amount.ToString("F2", CultureInfo.InvariantCulture),
-                    PaymentMethod = GetPaymentMethodName(t.PaymentMethodId ?? -1),
-                    CategoryName = GetCategoryById(t.CategoryId),
-                    t.Date,
-                    t.Description
-                }).ToList();
+                    var transactions = _transactionService.Get<Transaction>(t => t.UserId == FormPrincipal.User.Id).ToList();
 
-                dataGridViewConsulta.DataSource = transactionsDisplay;
+                    var transactionsDisplay = transactions.Select(t => new
+                    {
+                        t.Id,
+                        UserName = GetUserById(t.UserId),
+                        Amount = t.Amount.ToString("F2", CultureInfo.InvariantCulture),
+                        PaymentMethod = GetPaymentMethodName(t.PaymentMethodId ?? -1),
+                        CategoryName = GetCategoryById(t.CategoryId),
+                        t.Date,
+                        t.Description
+                    }).ToList();
 
-                if (dataGridViewConsulta.Columns["Description"] != null)
+                    dataGridViewConsulta.DataSource = transactionsDisplay;
+
+                    if (dataGridViewConsulta.Columns["Description"] != null)
+                    {
+                        dataGridViewConsulta.Columns["Description"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    }
+                }
+                else
                 {
-                    dataGridViewConsulta.Columns["Description"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridViewConsulta.DataSource = null;
                 }
             }
             catch (Exception ex)
@@ -221,7 +232,7 @@ namespace FinanceManager.App.Cadastros
             txtId.Text = linha.Cells["Id"].Value?.ToString();
             txtIdUser.Text = linha.Cells["UserId"].Value?.ToString();
 
-            if (linha.Cells["Amount"].Value != null && decimal.TryParse(linha.Cells["Amount"].Value.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out decimal amount))
+            if (linha.Cells["Amount"].Value != null && decimal.TryParse(linha.Cells["Amount"].Value!.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out decimal amount))
             {
                 txtValue.Text = amount.ToString("F2", CultureInfo.InvariantCulture);
             }
@@ -233,14 +244,14 @@ namespace FinanceManager.App.Cadastros
             txtTransactionDate.Text = linha.Cells["Date"].Value?.ToString();
             txtDescription.Text = linha.Cells["Description"].Value?.ToString();
 
-            if (linha.Cells["PaymentMethod"].Value != null)
+            if (linha.Cells["PaymentMethod"].Value is object paymentValue)
             {
-                string paymentMethodName = linha.Cells["PaymentMethod"].Value.ToString();
+                string paymentMethodName = paymentValue.ToString() ?? "";
                 cboPaymentMethod.SelectedIndex = cboPaymentMethod.Items.IndexOf(paymentMethodName);
             }
 
 
-            if (linha.Cells["CategoryId"].Value != null && int.TryParse(linha.Cells["CategoryId"].Value.ToString(), out int categoryId))
+            if (linha.Cells["CategoryId"].Value != null && int.TryParse(linha.Cells["CategoryId"].Value!.ToString(), out int categoryId))
             {
                 cboCategory.SelectedValue = categoryId;
                 txtCategoryId.Text = categoryId > 0 ? categoryId.ToString() : "";

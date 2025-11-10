@@ -47,7 +47,15 @@ namespace FinanceManager.Service.Services
             return outputModel;
         }
 
-        public TOutputModel GetById<TOutputModel>(int id, bool tracking = true, IList<string>? includes = null)
+        public IEnumerable<TOutputModel> Get<TOutputModel>(System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate, bool tracking = true, IList<string>? includes = null) where TOutputModel : class
+        {
+            var entities = _baseRepository.Select(predicate, tracking, includes);
+            var outputModel = entities.Select(entity => _mapper.Map<TOutputModel>(entity));
+            return outputModel;
+        }
+
+
+        public TOutputModel? GetById<TOutputModel>(int id, bool tracking = true, IList<string>? includes = null)
             where TOutputModel : class
         {
 
@@ -98,7 +106,7 @@ namespace FinanceManager.Service.Services
                 .GroupBy(t => t.Date.Date) // Agrupa pela data, ignorando a hora
                 .ToDictionary(g => g.Key, g => g.Sum(t => t.Amount));
 
-            return dailyExpenses;
+            return dailyExpenses ?? new Dictionary<DateTime, decimal>();
         }
     
     }

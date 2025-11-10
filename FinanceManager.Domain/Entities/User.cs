@@ -18,9 +18,9 @@ namespace FinanceManager.Domain.Entities
             Phone = phone;
         }
 
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }
+        public string Name { get; set; } = null!;
+        public string Email { get; set; } = null!;
+        public string PasswordHash { get; set; } = null!;
         public string? Phone { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastLogin { get; set; }

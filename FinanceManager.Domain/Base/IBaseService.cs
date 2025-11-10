@@ -16,7 +16,11 @@ namespace FinanceManager.Domain.Base
         IEnumerable<TOutputModel> Get<TOutputModel>(bool tracking = true, IList<string>? includes = null)
             where TOutputModel : class;
 
-        TOutputModel GetById<TOutputModel>(int id, bool tracking = true, IList<string>? includes = null)
+        IEnumerable<TOutputModel> Get<TOutputModel>(System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate, bool tracking = true, IList<string>? includes = null)
+            where TOutputModel : class;
+
+
+        TOutputModel? GetById<TOutputModel>(int id, bool tracking = true, IList<string>? includes = null)
             where TOutputModel : class;
 
         TOutputModel Update<TInputModel, TOutputModel, TValidator>(TInputModel inputModel)

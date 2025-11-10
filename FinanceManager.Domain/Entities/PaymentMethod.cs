@@ -16,8 +16,8 @@ namespace FinanceManager.Domain.Entities
             CardLimit = cardLimit;
         }
 
-        public string Name { get; set; }
-        public string Type { get; set; } // Ex: "Credit", "Debit", "Cash"
+        public string Name { get; set; } = null!;
+        public string Type { get; set; } = null!; // Ex: "Credit", "Debit", "Cash"
         public decimal? CardLimit { get; set; }
         public int UserId { get; set; }
 

@@ -50,6 +50,7 @@ namespace FinanceManager.Test
         {
             var sp = ConfigureServices();
             var usuarioService = sp.GetService<IBaseService<User>>();
+            Assert.IsNotNull(usuarioService);
             var usuario = new User
             {
                 Name = "Igor Kendy Sakaguchi",
@@ -69,6 +70,7 @@ namespace FinanceManager.Test
         {
             var sp = ConfigureServices();
             var usuarioService = sp.GetService<IBaseService<User>>();
+            Assert.IsNotNull(usuarioService);
 
             var result = usuarioService.Get<User>();
             Console.Write(JsonSerializer.Serialize(result));

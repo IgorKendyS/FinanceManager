@@ -9,6 +9,7 @@
         void Update(TEntity entity);
         void Delete(object id);
         IList<TEntity> Select(bool tracking = true, IList<string>? includes = null);
-        TEntity Select(object id, bool tracking = true, IList<string>? includes = null);
+        IEnumerable<TEntity> Select(System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate, bool tracking = true, IList<string>? includes = null);
+        TEntity? Select(object id, bool tracking = true, IList<string>? includes = null);
     }
 }

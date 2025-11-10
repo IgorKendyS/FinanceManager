@@ -64,8 +64,13 @@ namespace FinanceManager.App.Cadastros
                     if (int.TryParse(txtId.Text, out var id))
                     {
                         var user = _userService.GetById<User>(id);
+                        if (user == null)
+                        {
+                            MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         PreencheObjeto(user);
-                        user = _userService.Update<User, User, UserValidator>(user);
+                        _userService.Update<User, User, UserValidator>(user);
                     }
                 }
                 else
@@ -107,17 +112,17 @@ namespace FinanceManager.App.Cadastros
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
-            txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtNome.Text = linha?.Cells["Name"].Value.ToString();
-            txtEmail.Text = linha?.Cells["Email"].Value.ToString();
-            txtTelefone.Text = linha?.Cells["Phone"].Value.ToString();
-            txtSenha.Text = linha?.Cells["PasswordHash"].Value.ToString();
+            txtId.Text = linha?.Cells["Id"].Value?.ToString();
+            txtNome.Text = linha?.Cells["Name"].Value?.ToString();
+            txtEmail.Text = linha?.Cells["Email"].Value?.ToString();
+            txtTelefone.Text = linha?.Cells["Phone"].Value?.ToString();
+            txtSenha.Text = linha?.Cells["PasswordHash"].Value?.ToString();
 
-            txtDataCadastro.Text = DateTime.TryParse(linha?.Cells["Created"].Value.ToString(), out var dataC)
+            txtDataCadastro.Text = DateTime.TryParse(linha?.Cells["Created"].Value?.ToString(), out var dataC)
                 ? dataC.ToString("g")
                 : "";
 
-            txtDataUltimoLogin.Text = DateTime.TryParse(linha?.Cells["LastLogin"].Value.ToString(), out var dataL)
+            txtDataUltimoLogin.Text = DateTime.TryParse(linha?.Cells["LastLogin"].Value?.ToString(), out var dataL)
                 ? dataL.ToString("g")
                 : "";
         }
